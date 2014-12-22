@@ -1,0 +1,13 @@
+<?php echo $__env->make('layouts.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <div id="wrapper">
+      <?php echo $__env->make('layouts.menu', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <!-- Page Content -->
+    <div id="page-wrapper">
+      <div class="container-fluid">
+        <?php echo $__env->yieldContent('section','Default'); ?>
+      </div>
+      <!-- /.container-fluid -->
+    </div>
+    <!-- /#page-wrapper -->
+    </div>
+      <?php echo $__env->make('layouts.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

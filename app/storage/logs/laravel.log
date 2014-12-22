@@ -13,3 +13,306 @@ Stack trace:
 #1 /var/www/lualca/vendor/symfony/console/Symfony/Component/Console/Application.php(124): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
 #2 /var/www/lualca/artisan(59): Symfony\Component\Console\Application->run()
 #3 {main} [] []
+[2014-12-22 04:38:39] production.ERROR: exception 'InvalidArgumentException' with message 'View [hello] not found.' in /var/www/lualca/bootstrap/compiled.php:9510
+Stack trace:
+#0 /var/www/lualca/bootstrap/compiled.php(9483): Illuminate\View\FileViewFinder->findInPaths('hello', Array)
+#1 /var/www/lualca/vendor/laravel/framework/src/Illuminate/View/Factory.php(124): Illuminate\View\FileViewFinder->find('hello')
+#2 /var/www/lualca/bootstrap/compiled.php(3247): Illuminate\View\Factory->make('hello')
+#3 /var/www/lualca/app/routes.php(16): Illuminate\Support\Facades\Facade::__callStatic('make', Array)
+#4 /var/www/lualca/app/routes.php(16): Illuminate\Support\Facades\View::make('hello')
+#5 [internal function]: {closure}()
+#6 /var/www/lualca/bootstrap/compiled.php(5373): call_user_func_array(Object(Closure), Array)
+#7 /var/www/lualca/bootstrap/compiled.php(5040): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#8 /var/www/lualca/bootstrap/compiled.php(5028): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#9 /var/www/lualca/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#10 /var/www/lualca/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#11 /var/www/lualca/bootstrap/compiled.php(7816): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#12 /var/www/lualca/bootstrap/compiled.php(8423): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#13 /var/www/lualca/bootstrap/compiled.php(8370): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#14 /var/www/lualca/bootstrap/compiled.php(11041): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#15 /var/www/lualca/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#16 /var/www/lualca/public/index.php(49): Illuminate\Foundation\Application->run()
+#17 {main} [] []
+[2014-12-22 04:38:43] production.ERROR: exception 'InvalidArgumentException' with message 'View [hello] not found.' in /var/www/lualca/bootstrap/compiled.php:9510
+Stack trace:
+#0 /var/www/lualca/bootstrap/compiled.php(9483): Illuminate\View\FileViewFinder->findInPaths('hello', Array)
+#1 /var/www/lualca/vendor/laravel/framework/src/Illuminate/View/Factory.php(124): Illuminate\View\FileViewFinder->find('hello')
+#2 /var/www/lualca/bootstrap/compiled.php(3247): Illuminate\View\Factory->make('hello')
+#3 /var/www/lualca/app/routes.php(16): Illuminate\Support\Facades\Facade::__callStatic('make', Array)
+#4 /var/www/lualca/app/routes.php(16): Illuminate\Support\Facades\View::make('hello')
+#5 [internal function]: {closure}()
+#6 /var/www/lualca/bootstrap/compiled.php(5373): call_user_func_array(Object(Closure), Array)
+#7 /var/www/lualca/bootstrap/compiled.php(5040): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#8 /var/www/lualca/bootstrap/compiled.php(5028): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#9 /var/www/lualca/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#10 /var/www/lualca/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#11 /var/www/lualca/bootstrap/compiled.php(7816): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#12 /var/www/lualca/bootstrap/compiled.php(8423): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#13 /var/www/lualca/bootstrap/compiled.php(8370): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#14 /var/www/lualca/bootstrap/compiled.php(11041): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#15 /var/www/lualca/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#16 /var/www/lualca/public/index.php(49): Illuminate\Foundation\Application->run()
+#17 {main} [] []
+[2014-12-22 04:48:27] production.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in /var/www/lualca/bootstrap/compiled.php:5726
+Stack trace:
+#0 /var/www/lualca/bootstrap/compiled.php(5048): Illuminate\Routing\RouteCollection->match(Object(Illuminate\Http\Request))
+#1 /var/www/lualca/bootstrap/compiled.php(5036): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 /var/www/lualca/bootstrap/compiled.php(5028): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#3 /var/www/lualca/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#4 /var/www/lualca/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#5 /var/www/lualca/bootstrap/compiled.php(7816): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#6 /var/www/lualca/bootstrap/compiled.php(8423): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#7 /var/www/lualca/bootstrap/compiled.php(8370): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#8 /var/www/lualca/bootstrap/compiled.php(11041): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#9 /var/www/lualca/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#10 /var/www/lualca/public/index.php(49): Illuminate\Foundation\Application->run()
+#11 {main} [] []
+[2014-12-22 04:50:28] production.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in /var/www/lualca/bootstrap/compiled.php:5726
+Stack trace:
+#0 /var/www/lualca/bootstrap/compiled.php(5048): Illuminate\Routing\RouteCollection->match(Object(Illuminate\Http\Request))
+#1 /var/www/lualca/bootstrap/compiled.php(5036): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 /var/www/lualca/bootstrap/compiled.php(5028): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#3 /var/www/lualca/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#4 /var/www/lualca/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#5 /var/www/lualca/bootstrap/compiled.php(7816): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#6 /var/www/lualca/bootstrap/compiled.php(8423): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#7 /var/www/lualca/bootstrap/compiled.php(8370): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#8 /var/www/lualca/bootstrap/compiled.php(11041): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#9 /var/www/lualca/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#10 /var/www/lualca/public/index.php(49): Illuminate\Foundation\Application->run()
+#11 {main} [] []
+[2014-12-22 04:50:44] production.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in /var/www/lualca/bootstrap/compiled.php:5726
+Stack trace:
+#0 /var/www/lualca/bootstrap/compiled.php(5048): Illuminate\Routing\RouteCollection->match(Object(Illuminate\Http\Request))
+#1 /var/www/lualca/bootstrap/compiled.php(5036): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 /var/www/lualca/bootstrap/compiled.php(5028): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#3 /var/www/lualca/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#4 /var/www/lualca/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#5 /var/www/lualca/bootstrap/compiled.php(7816): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#6 /var/www/lualca/bootstrap/compiled.php(8423): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#7 /var/www/lualca/bootstrap/compiled.php(8370): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#8 /var/www/lualca/bootstrap/compiled.php(11041): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#9 /var/www/lualca/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#10 /var/www/lualca/public/index.php(49): Illuminate\Foundation\Application->run()
+#11 {main} [] []
+[2014-12-22 04:50:48] production.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in /var/www/lualca/bootstrap/compiled.php:5726
+Stack trace:
+#0 /var/www/lualca/bootstrap/compiled.php(5048): Illuminate\Routing\RouteCollection->match(Object(Illuminate\Http\Request))
+#1 /var/www/lualca/bootstrap/compiled.php(5036): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 /var/www/lualca/bootstrap/compiled.php(5028): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#3 /var/www/lualca/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#4 /var/www/lualca/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#5 /var/www/lualca/bootstrap/compiled.php(7816): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#6 /var/www/lualca/bootstrap/compiled.php(8423): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#7 /var/www/lualca/bootstrap/compiled.php(8370): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#8 /var/www/lualca/bootstrap/compiled.php(11041): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#9 /var/www/lualca/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#10 /var/www/lualca/public/index.php(49): Illuminate\Foundation\Application->run()
+#11 {main} [] []
+[2014-12-22 04:53:29] production.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in /var/www/lualca/bootstrap/compiled.php:5726
+Stack trace:
+#0 /var/www/lualca/bootstrap/compiled.php(5048): Illuminate\Routing\RouteCollection->match(Object(Illuminate\Http\Request))
+#1 /var/www/lualca/bootstrap/compiled.php(5036): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 /var/www/lualca/bootstrap/compiled.php(5028): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#3 /var/www/lualca/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#4 /var/www/lualca/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#5 /var/www/lualca/bootstrap/compiled.php(7816): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#6 /var/www/lualca/bootstrap/compiled.php(8423): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#7 /var/www/lualca/bootstrap/compiled.php(8370): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#8 /var/www/lualca/bootstrap/compiled.php(11041): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#9 /var/www/lualca/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#10 /var/www/lualca/public/index.php(49): Illuminate\Foundation\Application->run()
+#11 {main} [] []
+[2014-12-22 05:02:53] production.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in /var/www/lualca/bootstrap/compiled.php:5726
+Stack trace:
+#0 /var/www/lualca/bootstrap/compiled.php(5048): Illuminate\Routing\RouteCollection->match(Object(Illuminate\Http\Request))
+#1 /var/www/lualca/bootstrap/compiled.php(5036): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 /var/www/lualca/bootstrap/compiled.php(5028): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#3 /var/www/lualca/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#4 /var/www/lualca/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#5 /var/www/lualca/bootstrap/compiled.php(7816): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#6 /var/www/lualca/bootstrap/compiled.php(8423): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#7 /var/www/lualca/bootstrap/compiled.php(8370): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#8 /var/www/lualca/bootstrap/compiled.php(11041): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#9 /var/www/lualca/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#10 /var/www/lualca/public/index.php(49): Illuminate\Foundation\Application->run()
+#11 {main} [] []
+[2014-12-22 05:18:09] production.ERROR: exception 'ErrorException' with message 'Undefined variable: title' in /var/www/lualca/app/routes.php:27
+Stack trace:
+#0 /var/www/lualca/app/routes.php(27): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/var/www/lualca...', 27, Array)
+#1 [internal function]: {closure}()
+#2 /var/www/lualca/bootstrap/compiled.php(5373): call_user_func_array(Object(Closure), Array)
+#3 /var/www/lualca/bootstrap/compiled.php(5040): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#4 /var/www/lualca/bootstrap/compiled.php(5028): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#5 /var/www/lualca/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#6 /var/www/lualca/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#7 /var/www/lualca/bootstrap/compiled.php(7816): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#8 /var/www/lualca/bootstrap/compiled.php(8423): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#9 /var/www/lualca/bootstrap/compiled.php(8370): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#10 /var/www/lualca/bootstrap/compiled.php(11041): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#11 /var/www/lualca/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#12 /var/www/lualca/public/index.php(49): Illuminate\Foundation\Application->run()
+#13 {main} [] []
+[2014-12-22 05:20:20] production.ERROR: exception 'ErrorException' with message 'Undefined variable: title' in /var/www/lualca/app/routes.php:27
+Stack trace:
+#0 /var/www/lualca/app/routes.php(27): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/var/www/lualca...', 27, Array)
+#1 [internal function]: {closure}()
+#2 /var/www/lualca/bootstrap/compiled.php(5373): call_user_func_array(Object(Closure), Array)
+#3 /var/www/lualca/bootstrap/compiled.php(5040): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#4 /var/www/lualca/bootstrap/compiled.php(5028): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#5 /var/www/lualca/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#6 /var/www/lualca/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#7 /var/www/lualca/bootstrap/compiled.php(7816): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#8 /var/www/lualca/bootstrap/compiled.php(8423): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#9 /var/www/lualca/bootstrap/compiled.php(8370): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#10 /var/www/lualca/bootstrap/compiled.php(11041): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#11 /var/www/lualca/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#12 /var/www/lualca/public/index.php(49): Illuminate\Foundation\Application->run()
+#13 {main} [] []
+[2014-12-22 05:20:21] production.ERROR: exception 'ErrorException' with message 'Undefined variable: title' in /var/www/lualca/app/routes.php:27
+Stack trace:
+#0 /var/www/lualca/app/routes.php(27): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/var/www/lualca...', 27, Array)
+#1 [internal function]: {closure}()
+#2 /var/www/lualca/bootstrap/compiled.php(5373): call_user_func_array(Object(Closure), Array)
+#3 /var/www/lualca/bootstrap/compiled.php(5040): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#4 /var/www/lualca/bootstrap/compiled.php(5028): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#5 /var/www/lualca/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#6 /var/www/lualca/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#7 /var/www/lualca/bootstrap/compiled.php(7816): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#8 /var/www/lualca/bootstrap/compiled.php(8423): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#9 /var/www/lualca/bootstrap/compiled.php(8370): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#10 /var/www/lualca/bootstrap/compiled.php(11041): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#11 /var/www/lualca/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#12 /var/www/lualca/public/index.php(49): Illuminate\Foundation\Application->run()
+#13 {main} [] []
+[2014-12-22 05:20:35] production.ERROR: exception 'ErrorException' with message 'Missing argument 1 for {closure}()' in /var/www/lualca/app/routes.php:25
+Stack trace:
+#0 /var/www/lualca/app/routes.php(25): Illuminate\Exception\Handler->handleError(2, 'Missing argumen...', '/var/www/lualca...', 25, Array)
+#1 [internal function]: {closure}()
+#2 /var/www/lualca/bootstrap/compiled.php(5373): call_user_func_array(Object(Closure), Array)
+#3 /var/www/lualca/bootstrap/compiled.php(5040): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#4 /var/www/lualca/bootstrap/compiled.php(5028): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#5 /var/www/lualca/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#6 /var/www/lualca/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#7 /var/www/lualca/bootstrap/compiled.php(7816): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#8 /var/www/lualca/bootstrap/compiled.php(8423): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#9 /var/www/lualca/bootstrap/compiled.php(8370): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#10 /var/www/lualca/bootstrap/compiled.php(11041): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#11 /var/www/lualca/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#12 /var/www/lualca/public/index.php(49): Illuminate\Foundation\Application->run()
+#13 {main} [] []
+[2014-12-22 05:20:54] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '=>' (T_DOUBLE_ARROW)' in /var/www/lualca/app/routes.php:27
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-12-22 05:32:51] production.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in /var/www/lualca/bootstrap/compiled.php:5726
+Stack trace:
+#0 /var/www/lualca/bootstrap/compiled.php(5048): Illuminate\Routing\RouteCollection->match(Object(Illuminate\Http\Request))
+#1 /var/www/lualca/bootstrap/compiled.php(5036): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 /var/www/lualca/bootstrap/compiled.php(5028): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#3 /var/www/lualca/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#4 /var/www/lualca/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#5 /var/www/lualca/bootstrap/compiled.php(7816): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#6 /var/www/lualca/bootstrap/compiled.php(8423): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#7 /var/www/lualca/bootstrap/compiled.php(8370): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#8 /var/www/lualca/bootstrap/compiled.php(11041): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#9 /var/www/lualca/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#10 /var/www/lualca/public/index.php(49): Illuminate\Foundation\Application->run()
+#11 {main} [] []
+[2014-12-22 05:33:46] production.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in /var/www/lualca/bootstrap/compiled.php:5726
+Stack trace:
+#0 /var/www/lualca/bootstrap/compiled.php(5048): Illuminate\Routing\RouteCollection->match(Object(Illuminate\Http\Request))
+#1 /var/www/lualca/bootstrap/compiled.php(5036): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 /var/www/lualca/bootstrap/compiled.php(5028): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#3 /var/www/lualca/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#4 /var/www/lualca/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#5 /var/www/lualca/bootstrap/compiled.php(7816): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#6 /var/www/lualca/bootstrap/compiled.php(8423): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#7 /var/www/lualca/bootstrap/compiled.php(8370): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#8 /var/www/lualca/bootstrap/compiled.php(11041): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#9 /var/www/lualca/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#10 /var/www/lualca/public/index.php(49): Illuminate\Foundation\Application->run()
+#11 {main} [] []
+[2014-12-22 05:38:01] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'return' (T_RETURN)' in /var/www/lualca/app/controllers/DashboardController.php:21
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-12-22 05:38:32] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'return' (T_RETURN)' in /var/www/lualca/app/controllers/DashboardController.php:21
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-12-22 05:38:33] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'return' (T_RETURN)' in /var/www/lualca/app/controllers/DashboardController.php:21
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-12-22 05:39:11] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'return' (T_RETURN)' in /var/www/lualca/app/controllers/DashboardController.php:21
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-12-22 05:39:28] production.ERROR: exception 'BadMethodCallException' with message 'Method [index] does not exist.' in /var/www/lualca/vendor/laravel/framework/src/Illuminate/Routing/Controller.php:268
+Stack trace:
+#0 [internal function]: Illuminate\Routing\Controller->__call('index', Array)
+#1 [internal function]: DashboardController->index()
+#2 /var/www/lualca/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(231): call_user_func_array(Array, Array)
+#3 /var/www/lualca/bootstrap/compiled.php(5822): Illuminate\Routing\Controller->callAction('index', Array)
+#4 /var/www/lualca/bootstrap/compiled.php(5810): Illuminate\Routing\ControllerDispatcher->call(Object(DashboardController), Object(Illuminate\Routing\Route), 'index')
+#5 /var/www/lualca/bootstrap/compiled.php(5015): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'DashboardContro...', 'index')
+#6 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#7 /var/www/lualca/bootstrap/compiled.php(5373): call_user_func_array(Object(Closure), Array)
+#8 /var/www/lualca/bootstrap/compiled.php(5040): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 /var/www/lualca/bootstrap/compiled.php(5028): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 /var/www/lualca/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 /var/www/lualca/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 /var/www/lualca/bootstrap/compiled.php(7816): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 /var/www/lualca/bootstrap/compiled.php(8423): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#14 /var/www/lualca/bootstrap/compiled.php(8370): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#15 /var/www/lualca/bootstrap/compiled.php(11041): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 /var/www/lualca/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#17 /var/www/lualca/public/index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2014-12-22 05:39:43] production.ERROR: exception 'BadMethodCallException' with message 'Method [index] does not exist.' in /var/www/lualca/vendor/laravel/framework/src/Illuminate/Routing/Controller.php:268
+Stack trace:
+#0 [internal function]: Illuminate\Routing\Controller->__call('index', Array)
+#1 [internal function]: DashboardController->index()
+#2 /var/www/lualca/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(231): call_user_func_array(Array, Array)
+#3 /var/www/lualca/bootstrap/compiled.php(5822): Illuminate\Routing\Controller->callAction('index', Array)
+#4 /var/www/lualca/bootstrap/compiled.php(5810): Illuminate\Routing\ControllerDispatcher->call(Object(DashboardController), Object(Illuminate\Routing\Route), 'index')
+#5 /var/www/lualca/bootstrap/compiled.php(5015): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'DashboardContro...', 'index')
+#6 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#7 /var/www/lualca/bootstrap/compiled.php(5373): call_user_func_array(Object(Closure), Array)
+#8 /var/www/lualca/bootstrap/compiled.php(5040): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 /var/www/lualca/bootstrap/compiled.php(5028): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 /var/www/lualca/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 /var/www/lualca/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 /var/www/lualca/bootstrap/compiled.php(7816): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 /var/www/lualca/bootstrap/compiled.php(8423): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#14 /var/www/lualca/bootstrap/compiled.php(8370): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#15 /var/www/lualca/bootstrap/compiled.php(11041): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 /var/www/lualca/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#17 /var/www/lualca/public/index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2014-12-22 05:39:51] production.ERROR: exception 'InvalidArgumentException' with message 'View [dashboard] not found.' in /var/www/lualca/bootstrap/compiled.php:9510
+Stack trace:
+#0 /var/www/lualca/bootstrap/compiled.php(9483): Illuminate\View\FileViewFinder->findInPaths('dashboard', Array)
+#1 /var/www/lualca/vendor/laravel/framework/src/Illuminate/View/Factory.php(124): Illuminate\View\FileViewFinder->find('dashboard')
+#2 /var/www/lualca/bootstrap/compiled.php(3247): Illuminate\View\Factory->make('dashboard')
+#3 /var/www/lualca/app/controllers/DashboardController.php(21): Illuminate\Support\Facades\Facade::__callStatic('make', Array)
+#4 /var/www/lualca/app/controllers/DashboardController.php(21): Illuminate\Support\Facades\View::make('dashboard')
+#5 [internal function]: DashboardController->Index()
+#6 /var/www/lualca/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(231): call_user_func_array(Array, Array)
+#7 /var/www/lualca/bootstrap/compiled.php(5822): Illuminate\Routing\Controller->callAction('index', Array)
+#8 /var/www/lualca/bootstrap/compiled.php(5810): Illuminate\Routing\ControllerDispatcher->call(Object(DashboardController), Object(Illuminate\Routing\Route), 'index')
+#9 /var/www/lualca/bootstrap/compiled.php(5015): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'DashboardContro...', 'index')
+#10 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#11 /var/www/lualca/bootstrap/compiled.php(5373): call_user_func_array(Object(Closure), Array)
+#12 /var/www/lualca/bootstrap/compiled.php(5040): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#13 /var/www/lualca/bootstrap/compiled.php(5028): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#14 /var/www/lualca/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#15 /var/www/lualca/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#16 /var/www/lualca/bootstrap/compiled.php(7816): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#17 /var/www/lualca/bootstrap/compiled.php(8423): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#18 /var/www/lualca/bootstrap/compiled.php(8370): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#19 /var/www/lualca/bootstrap/compiled.php(11041): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#20 /var/www/lualca/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#21 /var/www/lualca/public/index.php(49): Illuminate\Foundation\Application->run()
+#22 {main} [] []
