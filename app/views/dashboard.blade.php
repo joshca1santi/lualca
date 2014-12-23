@@ -5,6 +5,10 @@
     <h2 class="page-header">{{{ $title or 'Default' }}}</h2>
       <h4><strong>Welcome</strong> to the Lualca Admin panel.</h4>
         <p>This is a basic template to edit.</p>
+
+        @if(!Sentry::check())Not logged @else{{ Sentry::getUser()->email }}@endif
+
+
   </div>
   <!-- /.col-lg-12 -->
 </div>
