@@ -12,6 +12,9 @@ Route::get('/blank', function()
 
 Route::resource('dashboard', 'DashboardController');
 Route::resource('login', 'LoginController');
+
+Route::resource('users', 'UserController');
+
 /// LOGIN MODULE
 /*
 Route::get('/login', function()

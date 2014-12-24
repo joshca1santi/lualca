@@ -1,8 +1,4 @@
 @extends('layouts.master')
-@section('title')
-@parent
-Blank
-@stop
 @section('section')
 <div class="row">
   <div class="col-lg-12">

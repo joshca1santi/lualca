@@ -14,5 +14,6 @@
   <link href="css/sb-admin-2.css" rel="stylesheet">
   <!-- Custom Fonts -->
   <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  @yield('custom-css')
 </head>
   <body>
