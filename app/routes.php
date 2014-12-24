@@ -10,12 +10,13 @@ Route::get('/blank', function()
 	return View::make('blank')->with('title',$title);
 });
 
+Route::resource('dashboard', 'DashboardController');
+Route::resource('login', 'LoginController');
+/// LOGIN MODULE
+/*
 Route::get('/login', function()
 {
-	$title = 'Login';
-	return View::make('login')->with('title',$title);
+$title = 'Login';
+return View::make('login')->with('title',$title);
 });
-
-
-
-Route::resource('dashboard', 'DashboardController');
+*/
