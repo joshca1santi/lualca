@@ -16,11 +16,11 @@ $(function()
   {
     if(typeof result.message !== 'undefined')
     {
-      alert(result.message+result.messageType);
-    }
-    else if(typeof result.errorMessages !== 'undefined')
-    {
-      alert(result.errorMessages);
+      new PNotify({
+        title: result.message,
+        text: result.messageType
+      });
+
     }
   }
   else

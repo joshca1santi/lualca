@@ -64,7 +64,11 @@ class LoginController extends \BaseController {
 
 		catch (Cartalyst\Sentry\Users\LoginRequiredException $e)
 		{
-			return Response::json(array('doLogin' => false, 'message' => 'Error', 'messageType' => 'Login Required'));
+			return Response::json(array(
+      'doLogin' => false, 
+      'message' => 'Error',
+      'messageType' =>'Login Required',
+      'icon' =>'glyphicon glyphicon-envelope'));
 		}
 		catch (Cartalyst\Sentry\Users\PasswordRequiredException $e)
 		{

@@ -7,13 +7,15 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <title>Lualca - {{{ $title or 'Default' }}}</title>
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+  {{ HTML::style('css/bootstrap.min.css') }}
   <!-- MetisMenu CSS -->
-  <link href="css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
+  {{ HTML::style('css/plugins/metisMenu/metisMenu.min.css') }}
   <!-- Custom CSS -->
-  <link href="css/sb-admin-2.css" rel="stylesheet">
+  {{ HTML::style('css/sb-admin-2.css') }}
   <!-- Custom Fonts -->
-  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  {{ HTML::style('font-awesome/css/font-awesome.min.css') }}
+  <!-- Pnotify -->
+  {{ HTML::style('css/pnotify.custom.min.css') }}
   @yield('custom-css')
 </head>
   <body>

@@ -1,9 +1,6 @@
 @extends('layouts.header')
-@section('title')
-@parent
-Login
-@stop
-<body>
+
+
   <div class="container">
     <div class="row">
       <div class="col-md-4 col-md-offset-4">
@@ -29,20 +26,9 @@ Login
     </div>
   </div>
 
-  <!-- jQuery -->
-  <script src="js/jquery.js"></script>
 
-  <!-- Bootstrap Core JavaScript -->
-  <script src="js/bootstrap.min.js"></script>
-
-  <!-- Metis Menu Plugin JavaScript -->
-  <script src="js/plugins/metisMenu/metisMenu.min.js"></script>
-
-  <!-- Custom Theme JavaScript -->
-  <script src="js/sb-admin-2.js"></script>
-
-  <script src="js/login.js"></script>
-
-</body>
-
-</html>
+  @section('custom-js')
+  {{HTML::script('js/login.js')}}
+  @stop
+  
+  @include('layouts.footer')
