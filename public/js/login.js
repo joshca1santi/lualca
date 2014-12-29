@@ -18,9 +18,9 @@ $(function()
     {
       new PNotify({
         title: result.message,
-        text: result.messageType
+        text: result.messageType,
+        type: 'error'
       });
-
     }
   }
   else

@@ -7,7 +7,7 @@
   <div class="page-header">
     <h2>{{{ $title or 'Default' }}} <small>of groups</small></h2>
   </div>
-  <div class="col-lg-8">
+  <div class="col-lg-8 col-lg-offset-2">
     <div class="panel panel-success">
       <div class="panel-heading">
         <h3 class="panel-title"></h3>
@@ -18,7 +18,7 @@
             <tr>
               <th class="col-md-1" style="text-align: center;"><input type="checkbox" class="check-all"></th>
               <th class="col-lg-1 hidden-xs" style="text-align: center;">Id</th>
-              <th class="col-lg-4">Name</th>
+              <th style="text-align: center;" class="col-lg-4">Name</th>
             </tr>
           </thead>
           <tbody>
@@ -28,8 +28,8 @@
               <td style="text-align: center;">
                 <input type="checkbox" data-group-id="{{ $group->getId(); }}">
               </td>
-              <td class="hidden-xs" style="text-align: center;">{{ $group->getId() }}</td>
-              <td><a href="groups/{{ $group->id }}">{{ $group->name }}<a/></td>
+              <td style="text-align: center;" class="hidden-xs" style="text-align: center;">{{ $group->getId() }}</td>
+              <td style="text-align: center;"><a href="groups/{{ $group->id }}">{{ $group->name }}<a/></td>
                 @endif
               </tr>
               @endforeach

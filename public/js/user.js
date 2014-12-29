@@ -19,6 +19,7 @@ $(function()
       new PNotify({
         title: result.message,
         text: result.messageType,
+        type: 'error',
       });
     }
   }
@@ -27,6 +28,7 @@ $(function()
     new PNotify({
       title: result.message,
       text: result.messageType,
+      type: 'success',
     });
   }
 });

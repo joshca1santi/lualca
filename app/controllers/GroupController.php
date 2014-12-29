@@ -47,7 +47,6 @@ class GroupController extends \BaseController {
 				'name'        => Input::get('group'),
 				'permissions' => array(
 					'admin' => 1,
-					'users' => 1,
 				),
 			));
 		}
@@ -59,6 +58,9 @@ class GroupController extends \BaseController {
 		{
 			return Response::json(array('doLogin' => false, 'message' => 'Error', 'messageType' => 'Group Already Exist.'));
 		}
+
+		return Response::json(array('doLogin' => true, 'message' => 'Success', 'messageType' => 'Group Created'));
+
 	}
 
 

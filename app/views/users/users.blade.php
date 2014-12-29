@@ -7,7 +7,7 @@
   <div class="page-header">
     <h2>{{{ $title or 'Default' }}} <small>of users</small></h2>
   </div>
-  <div class="col-lg-12">
+  <div class="col-lg-8 col-lg-offset-2">
 <div class="panel panel-info">
   <div class="panel-heading">
     <h3 class="panel-title"></h3>
@@ -18,9 +18,9 @@
         <tr>
           <th class="col-lg-1" style="text-align: center;"><input type="checkbox" class="check-all"></th>
           <th class="col-lg-1 hidden-xs" style="text-align: center;">Id</th>
-          <th>Email</th>
-          <th>Activated</th>
-          <th class="hidden-xs">Last Login</th>
+          <th style="text-align: center;">Email</th>
+          <th style="text-align: center;">Activated</th>
+          <th style="text-align: center;" class="hidden-xs">Last Login</th>
         </tr>
       </thead>
       <tbody>
@@ -31,9 +31,9 @@
             <input type="checkbox" data-user-id="{{ $user->getId(); }}">
           </td>
           <td class="hidden-xs" style="text-align: center;">{{ $user->getId() }}</td>
-          <td><a href="users/{{ $user->id }}">{{ $user->email }}<a/></td>
-            <td>{{ boolval($user->activated) ? 'True' : 'False' }}</td>
-            <td class="hidden-xs">{{{ $user->last_login or 'Never' }}}</td>
+          <td style="text-align: center;"><a href="users/{{ $user->id }}">{{ $user->email }}<a/></td>
+            <td style="text-align: center;">{{ boolval($user->activated) ? 'True' : 'False' }}</td>
+            <td style="text-align: center;" class="hidden-xs">{{{ $user->last_login or 'Never' }}}</td>
             @endif
           </tr>
           @endforeach
