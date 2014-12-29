@@ -1,7 +1,7 @@
 $(function()
 {
 
-  $(document).on('submit', '#create-user', function()
+  $(document).on('submit', '#create-group', function()
 {
   var sArray = $(this).serializeArray();
   $.ajax({
@@ -44,7 +44,7 @@ return false;
 
   $.ajax(
   {
-    "url": window.location.href.toString()+"/../users/"+$(this).data('user-id'),
+    "url": window.location.href.toString()+"/../group/"+$(this).data('group-id'),
     "type": "DELETE"
   }).done(function(result)
 {

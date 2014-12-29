@@ -85,6 +85,7 @@ class UserController extends \BaseController {
 	{
 		//Tittle
 		$title = 'Show';
+		try {
 		//Find the user By
 		$mode = 'id';
 		switch($mode){
@@ -95,8 +96,14 @@ class UserController extends \BaseController {
 				$user = Sentry::findUserByLogin($id);
 			break;
 		}
+	}
+		catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
+		{
+			return Response::json(array('deletedUser' => false, 'message' => 'User Not Found', 'messageType' => 'danger'));
+		}
 
 		return View::make('users.show')->with(array ('title' => $title, 'user' => $user));
+		
 	}
 
 

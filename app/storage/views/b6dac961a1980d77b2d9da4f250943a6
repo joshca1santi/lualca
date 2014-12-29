@@ -27,7 +27,9 @@
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('custom-js'); ?>
-<?php echo HTML::script(''); ?>
+
+<?php echo HTML::script('js/user.js'); ?>
+
 
 <?php $__env->stopSection(); ?>
 

@@ -249,7 +249,6 @@
             <li>
               <a href="{{URL::route('create-user')}}"><i class="fa fa-edit fa-fw"></i> Create</a>
             </li>
-
           </ul>
         </li>
         <li>
@@ -283,13 +282,13 @@
           <!-- /.nav-second-level -->
         </li>
         <li>
-          <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+          <a href="#"><i class="fa fa-sitemap fa-fw"></i> Groups<span class="fa arrow"></span></a>
           <ul class="nav nav-second-level">
             <li>
-              <a href="#">Second Level Item</a>
+              <a href="{{URL::route('group-list')}}"><i class="fa fa-bar-chart-o fa-fw"></i> List</a>
             </li>
             <li>
-              <a href="#">Second Level Item</a>
+              <a href="{{URL::route('create-group')}}"><i class="fa fa-edit fa-fw"></i> Create</a>
             </li>
             <li>
               <a href="#">Third Level <span class="fa arrow"></span></a>
@@ -316,10 +315,10 @@
           <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
           <ul class="nav nav-second-level">
             <li>
-              <a href="blank">Blank Page</a>
+              <a href="">Blank Page</a>
             </li>
             <li>
-              <a href="login">Login Page</a>
+              <a href="">Login Page</a>
             </li>
           </ul>
           <!-- /.nav-second-level -->

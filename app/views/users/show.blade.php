@@ -1,4 +1,5 @@
 @extends('layouts.master')
+
 @section('section')
 <div class="row">
   <div class="page-header">
@@ -28,5 +29,7 @@
 @stop
 
 @section('custom-js')
-{{HTML::script('')}}
+
+{{HTML::script('js/user.js')}}
+
 @stop

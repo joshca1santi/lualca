@@ -10,11 +10,11 @@ Route::get('/blank', function()
 	return View::make('blank')->with('title',$title);
 });
 
+
 Route::get('dashboard', array(
 	'as' => 'dashboard',
 	'uses' => 'DashboardController@Index')
 );
-
 
 /////////////////// LOGIN
 Route::get('login', array(
@@ -48,5 +48,29 @@ Route::post('login', array(
 		'as' => 'delete-user',
 		'uses' => 'UserController@destroy')
 	);
+////////////////////////////////////////
 
+
+
+/////////////////// GROUP
+Route::get('group', array(
+	'as' => 'group-list',
+	'uses' => 'GroupController@index')
+);
+Route::get('group/create', array(
+	'as' => 'create-group',
+	'uses' => 'GroupController@create')
+);
+Route::post('group/create', array(
+	'as' => 'create-group',
+	'uses' => 'GroupController@store')
+);
+Route::get('group/{id}', array(
+	'as' => 'show-group',
+	'uses' => 'GroupController@show')
+);
+Route::delete('group/{id}', array(
+	'as' => 'delete-group',
+	'uses' => 'GroupController@destroy')
+);
 ////////////////////////////////////////

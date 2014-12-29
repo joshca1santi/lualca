@@ -4,37 +4,47 @@
 @stop
 @section('section')
 <div class="row">
+  <div class="page-header">
+    <h2>{{{ $title or 'Default' }}} <small>of users</small></h2>
+  </div>
   <div class="col-lg-12">
-<div class="page-header">
-  <h2>{{{ $title or 'Default' }}} <small>of users</small></h2>
-</div>
-      <table id="example" class="table table-striped table-bordered table-condensed" cellspacing="0" width="100%">
-        <thead>
-          <tr>
-            <th class="col-lg-1 hidden-xs" style="text-align: center;">Id</th>
-            <th>Email</th>
-            <th>Activated</th>
-            <th>Last Login</th>
-            <th class="col-lg-1" style="text-align: center;"><input type="checkbox" class="check-all"></th>
-
-          </tr>
-        </thead>
-        <tbody>
-            @foreach ($users as $user)
-            @if (!empty($user->id))
-            <tr>
-            <td class="hidden-xs" style="text-align: center;">{{ $user->getId() }}</td>
-            <td><a href="users/{{ $user->id }}">{{ $user->email }}<a/></td>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title"></h3>
+  </div>
+  <div class="panel-body">
+    <table id="example" class="table table-striped table-bordered table-condensed" cellspacing="0" width="100%">
+      <thead>
+        <tr>
+          <th class="col-lg-1" style="text-align: center;"><input type="checkbox" class="check-all"></th>
+          <th class="col-lg-1 hidden-xs" style="text-align: center;">Id</th>
+          <th>Email</th>
+          <th>Activated</th>
+          <th class="hidden-xs">Last Login</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach ($users as $user)
+        @if (!empty($user->id))
+        <tr>
+          <td style="text-align: center;">
+            <input type="checkbox" data-user-id="{{ $user->getId(); }}">
+          </td>
+          <td class="hidden-xs" style="text-align: center;">{{ $user->getId() }}</td>
+          <td><a href="users/{{ $user->id }}">{{ $user->email }}<a/></td>
             <td>{{ boolval($user->activated) ? 'True' : 'False' }}</td>
-            <td>{{{ $user->last_login or 'Never' }}}</td>
-            <td style="text-align: center;">
-              <input type="checkbox" data-user-id="{{ $user->getId(); }}">
-            </td>
+            <td class="hidden-xs">{{{ $user->last_login or 'Never' }}}</td>
             @endif
           </tr>
-            @endforeach
+          @endforeach
         </tbody>
       </table>
+  </div>
+  <div class="panel-footer">
+
+  </div>
+</div>
+
       <div class="modal fade" id="confirm-modal" tabindex="-1" role="dialog" aria-labelledby="confirm-modal" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -66,9 +76,5 @@ $(document).ready(function() {
   $('#example').dataTable();
 });
 </script>
-@section('custom-js')
 {{HTML::script('js/user.js')}}
-@stop
-
-
 @stop
