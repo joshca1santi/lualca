@@ -3,12 +3,15 @@
 @section('section')
 <div class="row">
   <div class="page-header">
-    <h2>{{{ $title or 'Default' }}}<small> user</small></h2>
+    <ol class="breadcrumb">
+      <li><a href="{{URL::route('users')}}">Users</a></li>
+      <li>{{{ $title or 'Default' }}}</li>
+    </ol>
   </div>
   <div class="col-md-6">
-    <div class="panel panel-info">
+    <div class="panel panel-green">
       <div class="panel-heading">
-        <h3 class="panel-title">Profile <strong class="text-muted">{{$user->email}}</strong></h3>
+        <h3 class="panel-title">Profile <strong class="">{{$user->email}}</strong></h3>
       </div>
       <div class="panel-body">
         <div class="form-group">

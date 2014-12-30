@@ -5,12 +5,20 @@
 @section('section')
 <div class="row">
   <div class="page-header">
-    <h2>{{{ $title or 'Default' }}} <small>of users</small></h2>
+    <ol class="breadcrumb">
+      <li><a href="{{URL::route('users')}}">Users</a></li>
+      <li>{{{ $title or 'Default' }}}</li>
+    </ol>
   </div>
-  <div class="col-lg-8 col-lg-offset-2">
-<div class="panel panel-info">
+
+  <div class="col-md-10">
+<div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title"></h3>
+  <div class="btn-group">
+    <button id="desactivate-item" aria-label="Left Align" data-placement="bottom" title="Desactivate" class="btn btn-default"><span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span></button>
+    <button id="delete-item" aria-label="Center Align" data-placement="bottom" title="Delete" class="btn btn-default"><span class="text-danger glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+    <button id="refresh" aria-label="Right Align" data-placement="bottom" title="Refresh" class="btn btn-default"><span class="text-info glyphicon glyphicon-refresh" aria-hidden="true"></span></button>
+  </div>
   </div>
   <div class="panel-body">
     <table id="example" class="table table-striped table-bordered table-condensed" cellspacing="0" width="100%">
@@ -50,17 +58,16 @@
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h4 class="modal-title">aa</h4>
+              <h4 class="modal-title">Confirmation</h4>
             </div>
-            <div class="modal-body">bb</div>
+            <div class="modal-body">Are you sure you want to delete the user(s)?</div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">{{ trans('syntara::all.no') }}</button>
-              <button type="button" class="btn btn-primary confirm-action">{{ trans('syntara::all.yes') }}</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+              <button type="button" class="btn btn-primary confirm-action">Yes</button>
             </div>
           </div>
         </div>
       </div>
-      <a id="delete-item" class="btn btn-danger">Delete</a>
 
   </div>
   <!-- /.col-lg-12 -->

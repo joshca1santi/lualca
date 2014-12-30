@@ -1,10 +1,17 @@
 <?php $__env->startSection('section'); ?>
 <div class="row">
 
-<div class="page-header">
-  <h2><?php echo e(isset($title) ? $title : 'Default'); ?><small> new user </small></h2>
-</div>
+  <div class="page-header">
+    <ol class="breadcrumb">
+      <li><a href="<?php echo URL::route('users'); ?>">Users</a></li>
+      <li><?php echo e(isset($title) ? $title : 'Default'); ?></li>
+    </ol>
+  </div>
+
   <div class="col-lg-5 col-xs-8">
+    <div class="well well-sm">
+      <!-- Form Name -->
+      <legend class="text-info">Create a new user</legend>
       <?php echo Form::open(array('url' => 'users/create', 'id' => 'create-user')); ?>
 
     <p>
@@ -26,18 +33,19 @@
 
     </p>
 -->
-    <p><?php echo Form::submit('Create', array('class' => 'btn btn-lg btn-info')); ?></p>
+    <p><?php echo Form::submit('Create', array('class' => 'btn btn-outline btn-success')); ?></p>
     <?php echo Form::close(); ?>
 
+    </div>
   </div>
   <!-- /.col-lg-12 -->
 </div>
 <!-- /.row -->
 <?php $__env->stopSection(); ?>
 
-<?php $__env->startSection('custom-js'); ?>
-<?php echo HTML::script('js/user.js'); ?>
+  <?php $__env->startSection('custom-js'); ?>
+    <?php echo HTML::script('js/user.js'); ?>
 
-<?php $__env->stopSection(); ?>
+  <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

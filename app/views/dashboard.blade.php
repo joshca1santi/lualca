@@ -4,9 +4,13 @@
   <div class="col-lg-12">
     <h2 class="page-header">{{{ $title or 'Default' }}}</h2>
       <h4><strong>Welcome</strong> to the Lualca Admin panel.</h4>
-        <p>This is a basic template to edit.</p>
+        <blockquote>This is a basic template to edit.</blockquote>
 
-        @if(!Sentry::check())Not logged @else{{ Sentry::getUser()->email }}@endif
+        @if(!Sentry::check())
+          Not logged
+        @else
+          {{ Sentry::getUser()->email }}
+        @endif
 
 
   </div>
@@ -14,3 +18,7 @@
 </div>
 <!-- /.row -->
 @stop
+
+  @section('custom-js')
+
+  @stop

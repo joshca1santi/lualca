@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Lualca - <?php echo e(isset($title) ? $title : 'Default'); ?></title>
+    <title>
+      Lualca - <?php echo e(isset($title) ? $title : 'Default'); ?>
+
+    </title>
   <?php echo HTML::style('css/bootstrap.min.css'); ?>
 
   <!-- MetisMenu CSS -->
@@ -21,6 +24,9 @@
   <!-- Pnotify -->
   <?php echo HTML::style('css/pnotify.custom.min.css'); ?>
 
-  <?php echo $__env->yieldContent('custom-css'); ?>
-</head>
+  <?php echo HTML::style('css/plugins/social-buttons.css'); ?>
+
+<?php echo $__env->yieldContent('custom-css'); ?>
+  </head>
+
   <body>

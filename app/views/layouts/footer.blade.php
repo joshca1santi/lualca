@@ -10,6 +10,24 @@
 <!-- Custom Theme JavaScript -->
 {{HTML::script('js/sb-admin-2.js')}}
 {{HTML::script('js/pnotify.custom.min.js')}}
+<script type="text/javascript">
+$( document ).ready(function() {
+
+  var url = window.location;
+
+  $('ul.nav a[href="'+ url +'"]').addClass('active').parent().parent().addClass('in').parent().addClass('active');
+
+  // Will also work for relative and absolute hrefs
+
+  $('ul.nav a').filter(function() {
+
+    return this.href == url;
+
+  }).addClass('active').parent().parent().addClass('in').parent().addClass('active');
+
+});
+</script>
+
 @yield('custom-js')
   </body>
 </html>

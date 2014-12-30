@@ -3,10 +3,13 @@
 <div class="row">
   <div class="col-lg-12">
     <div class="page-header">
-      <h2>{{{ $title or 'Default' }}} <small></small></h2>
+      <ol class="breadcrumb">
+        <li><a href="{{URL::route('dashboard')}}">Dashboard</a></li>
+        <li>{{{ $title or 'Default' }}}</li>
+      </ol>
     </div>
       <h4><strong>Welcome</strong> to the Lualca Admin panel.</h4>
-        <p>This is a basic template to edit.</p>
+        <p>This is a basic template to edzit.</p>
   </div>
   <!-- /.col-lg-12 -->
 </div>
@@ -14,5 +17,11 @@
 @stop
 
 @section('custom-js')
-{{HTML::script('')}}
+
+<script type="text/javascript">
+jQuery(document).ready(function($){
+
+
+});
+</script>
 @stop

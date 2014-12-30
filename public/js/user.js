@@ -36,8 +36,19 @@ $(function()
 return false;
 }).on('click', '#delete-item', function()
 {
+if (!$('.table tbody tr td input:checkbox:checked').is(':checked')){
 
+  new PNotify({
+    title: 'Warning',
+    text: 'Please select at least one user.',
+    type: 'warning',
+  });
+}
+
+else{
   $('#confirm-modal').modal();
+}
+
 
 }).on('click', '.confirm-action', function()
 {

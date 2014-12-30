@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Lualca - {{{ $title or 'Default' }}}</title>
-  {{ HTML::style('css/bootstrap.min.css') }}
+    <title>
+      Lualca - {{{ $title or 'Default' }}}
+    </title>
+  {{HTML::style('css/bootstrap.min.css')}}
   <!-- MetisMenu CSS -->
   {{ HTML::style('css/plugins/metisMenu/metisMenu.min.css') }}
   <!-- Custom CSS -->
@@ -16,6 +18,8 @@
   {{ HTML::style('font-awesome/css/font-awesome.min.css') }}
   <!-- Pnotify -->
   {{ HTML::style('css/pnotify.custom.min.css') }}
-  @yield('custom-css')
-</head>
+  {{ HTML::style('css/plugins/social-buttons.css') }}
+@yield('custom-css')
+  </head>
+
   <body>

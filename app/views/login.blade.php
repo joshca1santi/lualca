@@ -18,7 +18,12 @@
               {{ Form::label('password', 'Password') }}
               {{ Form::password('password', array('class' => 'form-control')) }}
             </p>
-            <p>{{ Form::submit('Submit!', array('class' => 'btn btn-lg btn-info')) }}</p>
+            <p>{{ Form::submit('Submit!', array('class' => 'btn btn-success')) }}
+               <a class="pull-right" href="#">Forgot your password?</a>
+            </p>
+            <a class="btn btn-block btn-social btn-github">
+              <i class="fa fa-github"></i> Sign in with GitHub
+            </a>
             {{ Form::close() }}
           </div>
         </div>
@@ -30,5 +35,5 @@
   @section('custom-js')
   {{HTML::script('js/login.js')}}
   @stop
-  
+
   @include('layouts.footer')
