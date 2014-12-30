@@ -18,6 +18,7 @@
           <button id="delete-item" aria-label="Center Align" data-placement="bottom" title="Delete" class="btn btn-default"><span class="text-danger glyphicon glyphicon-trash" aria-hidden="true"></span></button>
           <button id="refresh" aria-label="Right Align" data-placement="bottom" title="Refresh" class="btn btn-default"><span class="text-info glyphicon glyphicon-refresh" aria-hidden="true"></span></button>
         </div>
+        <h4 class="pull-right text-info">Group List</h4>
       </div>
       <div class="panel-body">
         <table id="example" class="table table-striped table-bordered table-condensed " cellspacing="0" width="100%">

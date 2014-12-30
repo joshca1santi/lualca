@@ -12,7 +12,6 @@ class UserController extends \BaseController {
 	{
 		$title = 'List';
 		$users = Sentry::findAllUsers();
-
 		return View::make('users.users')->with(array ('title' => $title, 'users' => $users));
 
 	}
@@ -103,7 +102,7 @@ class UserController extends \BaseController {
 		}
 
 		return View::make('users.show')->with(array ('title' => $title, 'user' => $user));
-		
+
 	}
 
 
