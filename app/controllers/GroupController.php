@@ -43,12 +43,21 @@ class GroupController extends \BaseController {
 		try
 		{
 			// Create the group
+			$permission_array = array();
+			$jsonText = Input::get('var');
+			$decodedText = html_entity_decode($jsonText);
+			$permission_array = json_decode($decodedText, true);
+			
+			if (empty($permission_array))
+			{
+				return Response::json(array('doLogin' => false, 'message' => 'Error', 'messageType' => 'At least select one permission.'));
+			}
+
 			$group = Sentry::createGroup(array(
 				'name'        => Input::get('group'),
-				'permissions' => array(
-					'admin' => 1,
-				),
+				'permissions' => $permission_array,
 			));
+
 		}
 		catch (Cartalyst\Sentry\Groups\NameRequiredException $e)
 		{

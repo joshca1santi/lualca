@@ -25,6 +25,7 @@ $(function()
   }
   else
   {
+
     new PNotify({
       title: result.message,
       text: result.messageType,

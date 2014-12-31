@@ -15,16 +15,18 @@
       <p>
         {{ Form::label('group', 'Group Name') }}
         {{ Form::text('group', Input::old('group'), array('placeholder' => 'Insert a name...', 'class' => 'form-control')) }}
+        {{ Form::text('var', Input::old('var'), array('placeholder' => '', 'id' => 'var', 'class' => 'form-control hidden')) }}
+
       </p>
       <!-- Form Name -->
       <legend class="text-muted">Select Permissions</legend>
       <div style="max-height: 300px;overflow: auto;">
         <ul id="check-list-box" class="list-group checked-list-box">
-          <li class="list-group-item" data-color="">Administrator</li>
-          <li class="list-group-item" data-color="success">Security</li>
-          <li class="list-group-item" data-color="success">Manager</li>
-          <li class="list-group-item" data-color="success">Employee</li>
-          <li class="list-group-item" data-color="success">Reader</li>
+          <li class="list-group-item" name='admin' id='Administrator' data-color="">Administrator</li>
+          <li class="list-group-item" name='security' data-color="success">Security</li>
+          <li class="list-group-item" name='manager' data-color="success">Manager</li>
+          <li class="list-group-item" name='employee' data-color="success">Employee</li>
+          <li class="list-group-item" name='reader' data-color="success">Reader</li>
         </ul>
       </div>
 <br>
@@ -34,8 +36,7 @@
 </div>
   <div class="col-md-4">
     <button class="btn btn-outline btn-info col-xs-12" id="get-checked-data">Preview Group permissions</button>
-    <pre id="display-json">
-    </pre>
+    <pre id="display-json"></pre>
 
   </div>
 

@@ -66,15 +66,37 @@ $(function () {
     init();
   });
 
-  $('#get-checked-data').on('click', function(event) {
+
+
+  $("#check-list-box li").on('click', function(event) {
     event.preventDefault();
     var checkedItems = {}, counter = 0;
+    var string;
+    $checkbox = $('#check-list-box');
+
     $("#check-list-box li.act").each(function(idx, li) {
-      checkedItems[counter] = $(li).text();
-      counter++;
+      checkedItems[counter] = $(li).attr('name');
+      counter++
     });
 
-    $('#display-json').html(JSON.stringify(checkedItems, null, '\t'));
+    if (checkedItems[0] != null)
+      var string = '"'+checkedItems[0]+'":1';
+      if (checkedItems[1] != null)
+        var string = string+',"'+checkedItems[1]+'":1';
+        if (checkedItems[2] != null)
+          var string = string+',"'+checkedItems[2]+'":1';
+          if (checkedItems[3] != null)
+            var string = string+',"'+checkedItems[3]+'":1';
+            if (checkedItems[4] != null)
+              var string = string+',"'+checkedItems[4]+'":1';
 
-  });
+                string = '{'+string+'}';
+                $('#var').val(string);
+
+                if (string === '{undefined}')
+                  $('#var').val('');
+
+            });
+
+
 });
