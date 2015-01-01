@@ -9,4 +9,13 @@ class DashboardController extends BaseController {
 		return View::make('dashboard')->with(array('title' => $title));
 	}
 
+
+	public function getLogout(){
+
+		Sentry::logout();
+		
+		return Redirect::route('login');
+
+	}
+
 }

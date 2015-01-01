@@ -22,6 +22,35 @@ App::after(function($request, $response)
 	//
 });
 
+Route::filter('basicAuth', function () {
+	if(!Sentry::check()) {
+		// save the attempted url
+		Session::put('attemptedUrl', URL::current());
+		return Redirect::route('login');
+	}
+	View::share('currentUser', Sentry::getUser());
+});
+
+Route::filter('notAuth', function () {
+	if(Sentry::check()) {
+		$url = Session::get('attemptedUrl');
+		if(!isset($url)) {
+			$url = URL::route('dashboard');
+		}
+		Session::forget('attemptedUrl');
+		return Redirect::to($url);
+	}
+});
+
+
+Route::filter('hasPermissions', function ($route, $request, $userPermission = null) {
+
+		if(!Sentry::getUser()->hasAccess('admin')) {
+			return App::abort(403, 'Unauthorized action.');
+		}
+
+});
+
 /*
 |--------------------------------------------------------------------------
 | Authentication Filters

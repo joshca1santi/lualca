@@ -9,22 +9,42 @@ Route::get('/blank', function()
 	$title = 'Blank';
 	return View::make('blank')->with('title',$title);
 });
+/*
+Route::group(array('before' => 'basicAuth'), function () {
 
+	Route::get('dashboard', array(
+		'as' => 'dashboard',
+		'uses' => 'DashboardController@Index')
+	);
 
-Route::get('dashboard', array(
-	'as' => 'dashboard',
-	'uses' => 'DashboardController@Index')
-);
+});
+*/
+
+Route::group(array('before' => 'basicAuth||hasPermissions'), function()
+{
+	Route::get('dashboard', array(
+		'as' => 'dashboard',
+		'uses' => 'DashboardController@Index')
+	);
+
+	Route::get('logout', array(
+		'as' => 'logout',
+		'uses' => 'DashboardController@getLogout')
+	);
+
+});
 
 /////////////////// LOGIN
-Route::get('login', array(
-	'as' => 'login',
-	'uses' => 'LoginController@index')
-);
-Route::post('login', array(
-	'as' => 'login',
-	'uses' => 'LoginController@store')
-);
+Route::group(array('before' => 'notAuth'), function () {
+	Route::get('login', array(
+		'as' => 'login',
+		'uses' => 'LoginController@index')
+	);
+	Route::post('login', array(
+		'as' => 'login',
+		'uses' => 'LoginController@store')
+	);
+});
 ////////////////////////////////////////
 
 /////////////////// USER
