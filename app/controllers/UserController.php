@@ -82,8 +82,6 @@ class UserController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//Tittle
-		$title = 'Show';
 		try {
 		//Find the user By
 		$mode = 'id';
@@ -101,7 +99,7 @@ class UserController extends \BaseController {
 			return Response::json(array('deletedUser' => false, 'message' => 'User Not Found', 'messageType' => 'danger'));
 		}
 
-		return View::make('users.show')->with(array ('title' => $title, 'user' => $user));
+		return View::make('users.show')->with(array ('user' => $user));
 
 	}
 

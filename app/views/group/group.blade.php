@@ -10,15 +10,15 @@
       <li>{{{ $title or 'Default' }}}</li>
     </ol>
   </div>
-  <div class="col-md-10">
-    <div class="panel panel-default">
+  <div class="col-md-12">
+    <div class="panel panel-primary">
       <div class="panel-heading">
         <div class="btn-group">
           <button id="desactivate-item" aria-label="Left Align" data-placement="bottom" title="Desactivate" class="btn btn-default"><span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span></button>
           <button id="delete-item" aria-label="Center Align" data-placement="bottom" title="Delete" class="btn btn-default"><span class="text-danger glyphicon glyphicon-trash" aria-hidden="true"></span></button>
           <button id="refresh" aria-label="Right Align" data-placement="bottom" title="Refresh" class="btn btn-default"><span class="text-info glyphicon glyphicon-refresh" aria-hidden="true"></span></button>
         </div>
-        <h4 class="pull-right text-info">Group List</h4>
+        <h4 class="pull-right">Group List</h4>
       </div>
       <div class="panel-body">
         <table id="example" class="table table-striped table-bordered table-condensed " cellspacing="0" width="100%">
@@ -39,7 +39,7 @@
                 <input type="checkbox" data-group-id="{{ $group->getId(); }}">
               </td>
               <td style="text-align: center;" class="hidden-xs" style="text-align: center;">{{ $group->getId() }}</td>
-              <td style="text-align: center;"><a href="groups/{{ $group->id }}">{{ $group->name }}<a/></td>
+              <td style="text-align: center;" ><a href="group/{{ $group->id }}">{{ $group->name }}<a/></td>
               <td style="text-align: center;" class=" hidden-xs"style="text-align: center;"><code>{{ json_encode($group->permissions) }}</code></td>
                 @endif
            </tr>

@@ -16,11 +16,17 @@ $(function()
   {
     if(typeof result.message !== 'undefined')
     {
+
       new PNotify({
         title: result.message,
         text: result.messageType,
         type: 'error',
+        nonblock: {
+          nonblock: true,
+          nonblock_opacity: .2
+        }
       });
+
     }
   }
   else
@@ -29,6 +35,10 @@ $(function()
       title: result.message,
       text: result.messageType,
       type: 'success',
+      nonblock: {
+        nonblock: true,
+        nonblock_opacity: .2
+      }
     });
   }
 });

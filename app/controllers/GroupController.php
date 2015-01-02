@@ -47,7 +47,7 @@ class GroupController extends \BaseController {
 			$jsonText = Input::get('var');
 			$decodedText = html_entity_decode($jsonText);
 			$permission_array = json_decode($decodedText, true);
-			
+
 			if (empty($permission_array))
 			{
 				return Response::json(array('doLogin' => false, 'message' => 'Error', 'messageType' => 'At least select one permission.'));
@@ -82,6 +82,18 @@ class GroupController extends \BaseController {
 	public function show($id)
 	{
 		//
+		$title = 'Show Group';
+		try
+		{
+			$group = Sentry::findGroupById($id);
+		}
+		catch (Cartalyst\Sentry\Groups\GroupNotFoundException $e)
+		{
+			return Response::json(array('showGroup' => false, 'message' => 'Group Not Found', 'messageType' => 'danger'));
+		}
+
+		return View::make('group.show')->with(array('title' => $title, 'group' => $group));
+
 	}
 
 
@@ -118,6 +130,22 @@ class GroupController extends \BaseController {
 	public function destroy($id)
 	{
 		//
+		try
+		{
+			// Find the group using the group id
+			$group = Sentry::findGroupById($id);
+
+			// Delete the group
+			$group->delete();
+		}
+		catch (Cartalyst\Sentry\Groups\GroupNotFoundException $e)
+		{
+			return Response::json(array('deletedGroup' => false, 'message' => 'Group Not Found', 'messageType' => 'danger'));
+		}
+
+		return View::make('group.list');
+
+
 	}
 
 

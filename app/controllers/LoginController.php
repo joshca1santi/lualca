@@ -47,6 +47,7 @@ class LoginController extends \BaseController {
 				'email'    => Input::get('email'),
 				'password' => Input::get('password'),
 			);
+/*
 			if ($credentials['email'] == 'lualca@lualca.com')
 			{
 
@@ -57,6 +58,7 @@ class LoginController extends \BaseController {
 					$throttle->unBan();
 				}
 			}
+*/
 
 			// Authenticate the user
 			$user = Sentry::authenticate($credentials, false);
@@ -65,7 +67,7 @@ class LoginController extends \BaseController {
 		catch (Cartalyst\Sentry\Users\LoginRequiredException $e)
 		{
 			return Response::json(array(
-      'doLogin' => false, 
+      'doLogin' => false,
       'message' => 'Error',
       'messageType' =>'Login Required',
       'icon' =>'glyphicon glyphicon-envelope'));
@@ -96,6 +98,8 @@ class LoginController extends \BaseController {
 		{
 			return Response::json(array('doLogin' => false, 'message' => 'Error', 'messageType' => 'User Banned'));
 		}
+
+    Sentry::login($user, false);
 
 		return Response::json(array('doLogin' => true, 'message' => 'welcome', 'messageType' => 'hi'));
 	}

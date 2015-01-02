@@ -17,7 +17,7 @@
     <p>
       <?php echo Form::label('email', 'Email Address'); ?>
 
-      <?php echo Form::text('email', Input::old('email'), array('placeholder' => 'awesome@awesome.com', 'class' => 'form-control')); ?>
+      <?php echo Form::text('email', Input::old('emails'), array('placeholder' => 'awesome@awesome.com', 'class' => 'form-control')); ?>
 
     </p>
     <p>
@@ -33,7 +33,7 @@
 
     </p>
 -->
-    <p><?php echo Form::submit('Create', array('class' => 'btn btn-outline btn-success')); ?></p>
+    <p><?php echo Form::submit('Create', array('class' => 'btn btn-success')); ?></p>
     <?php echo Form::close(); ?>
 
     </div>

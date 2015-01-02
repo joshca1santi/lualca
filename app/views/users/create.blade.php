@@ -16,7 +16,7 @@
       {{ Form::open(array('url' => 'users/create', 'id' => 'create-user')) }}
     <p>
       {{ Form::label('email', 'Email Address') }}
-      {{ Form::text('email', Input::old('email'), array('placeholder' => 'awesome@awesome.com', 'class' => 'form-control')) }}
+      {{ Form::text('email', Input::old('emails'), array('placeholder' => 'awesome@awesome.com', 'class' => 'form-control')) }}
     </p>
     <p>
       {{ Form::label('password', 'Password') }}
@@ -27,7 +27,7 @@
       {{ Form::password('password', array('class' => 'form-control')) }}
     </p>
 -->
-    <p>{{ Form::submit('Create', array('class' => 'btn btn-outline btn-success')) }}</p>
+    <p>{{ Form::submit('Create', array('class' => 'btn btn-success')) }}</p>
     {{ Form::close() }}
     </div>
   </div>

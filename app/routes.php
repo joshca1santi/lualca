@@ -1,7 +1,7 @@
 <?php
 Route::get('/', function()
 {
-	return View::make('blank');
+ 	return Redirect::route('dashboard');
 });
 
 Route::get('/blank', function()
@@ -9,16 +9,7 @@ Route::get('/blank', function()
 	$title = 'Blank';
 	return View::make('blank')->with('title',$title);
 });
-/*
-Route::group(array('before' => 'basicAuth'), function () {
 
-	Route::get('dashboard', array(
-		'as' => 'dashboard',
-		'uses' => 'DashboardController@Index')
-	);
-
-});
-*/
 
 Route::group(array('before' => 'basicAuth||hasPermissions'), function()
 {

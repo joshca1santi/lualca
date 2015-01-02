@@ -5,7 +5,9 @@
  */
 
 body {
-    background-color: #f8f8f8;
+
+  /*  background-color: #f8f8f8; */
+
 }
 
 #wrapper {
@@ -15,7 +17,7 @@ body {
 #page-wrapper {
     padding: 0 15px;
     min-height: 568px;
-    background-color: #fff;
+/*  background-color: #fff;*/
 }
 
 @media(min-width:768px) {
@@ -23,7 +25,7 @@ body {
         position: inherit;
         margin: 0 0 0 250px;
         padding: 0 30px;
-        border-left: 1px solid #e7e7e7;
+        border-left: 0px solid #e7e7e7;
     }
 }
 
@@ -95,13 +97,19 @@ body {
 }
 
 .sidebar ul li {
-    border-bottom: 1px solid #e7e7e7;
+    border-bottom: 0px solid #e7e7e7;
 }
 
 .sidebar ul li a.active {
-    background-color: #eee;
+    background-color: #0079D5;
 }
 
+.sidebar ul li a {
+  color: #fff;
+}
+.sidebar li a:hover{
+  background-color: #315876;
+}
 .sidebar .arrow {
     float: right;
 }

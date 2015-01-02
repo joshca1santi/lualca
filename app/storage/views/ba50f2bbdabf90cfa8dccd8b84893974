@@ -5,7 +5,7 @@
 
     <div class="page-header">
       <ol class="breadcrumb">
-        <li>/ <?php echo e(isset($title) ? $title : 'Default'); ?></li>
+        <li><?php echo e(isset($title) ? $title : 'Default'); ?></li>
       </ol>
     </div>
       <h4><strong>Welcome</strong> to the Lualca Admin panel.</h4>

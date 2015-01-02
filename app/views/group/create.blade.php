@@ -7,19 +7,20 @@
       <li>{{{ $title or 'Default' }}}</li>
     </ol>
   </div>
-    <div class="col-md-5 col-xs-8">
+    <div class="col-md-5">
       <div class="well well-sm">
         <!-- Form Name -->
         <legend class="text-info">Create a new group</legend>
       {{ Form::open(array('url' => 'group/create', 'id' => 'create-group')) }}
       <p>
         {{ Form::label('group', 'Group Name') }}
-        {{ Form::text('group', Input::old('group'), array('placeholder' => 'Insert a name...', 'class' => 'form-control')) }}
+        {{ Form::text('group', Input::old('group'), array('placeholder' => 'Insert a name...', 'class' => 'input-lg form-control')) }}
         {{ Form::text('var', Input::old('var'), array('placeholder' => '', 'id' => 'var', 'class' => 'form-control hidden')) }}
 
       </p>
       <!-- Form Name -->
-      <legend class="text-muted">Select Permissions</legend>
+      <legend class="text-info">Select Permissions</legend>
+      <span id="helpBlock" class="help-block">You should choose at least one permission to create a new group.</span>
       <div style="max-height: 300px;overflow: auto;">
         <ul id="check-list-box" class="list-group checked-list-box">
           <li class="list-group-item" name='admin' id='Administrator' data-color="">Administrator</li>
@@ -30,13 +31,55 @@
         </ul>
       </div>
 <br>
-  <p>{{ Form::submit('Create', array('class' => 'btn btn-outline btn-success')) }}</p>
+  <p>{{ Form::submit('Create', array('class' => 'btn btn-success')) }}</p>
   {{ Form::close() }}
 </div>
 </div>
-  <div class="col-md-4">
-    <button class="btn btn-outline btn-info col-xs-12" id="get-checked-data">Preview Group permissions</button>
-    <pre id="display-json"></pre>
+  <div class="col-md-6">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title">Permission Helper</h3>
+      </div>
+      <div class="panel-body">
+
+        <div class="panel-body">
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#admin_help" data-toggle="tab">Admin</a>
+            </li>
+            <li><a href="#profile" data-toggle="tab">Security</a>
+            </li>
+            <li><a href="#messages" data-toggle="tab">Manager</a>
+            </li>
+            <li><a href="#settings" data-toggle="tab">Employee</a>
+            </li>
+          </ul>
+
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div class="tab-pane fade in active" id="admin_help">
+              <h4>Admin</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <div class="tab-pane fade" id="profile">
+              <h4>Profile Tab</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <div class="tab-pane fade" id="messages">
+              <h4>Messages Tab</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <div class="tab-pane fade" id="settings">
+              <h4>Settings Tab</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel-footer">
+
+      </div>
+    </div>
 
   </div>
 

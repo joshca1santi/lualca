@@ -1,5 +1,5 @@
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0">
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
       <span class="sr-only">Toggle navigation</span>
@@ -205,7 +205,7 @@
     <li class="dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" href="#">
         <i class="fa fa-user fa-fw"></i>
-        @if(!Sentry::check())<span class='text-warning'>Not logged</span>@else<span class='text-success'>{{Sentry::getUser()->email}}</span> @endif
+        @if(!Sentry::check())<span class='text-warning'>Not logged</span>@else<span class=''><strong>{{Sentry::getUser()->email}}</strong></span> @endif
         <i class="fa fa-caret-down"></i>
       </a>
       <ul class="dropdown-menu dropdown-user">
@@ -241,17 +241,6 @@
           <a href="{{URL::route('dashboard')}}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
         </li>
         <li>
-          <a href="#"><i class="fa fa-user fa-fw"></i>Users<span class="fa arrow"></span></a>
-          <ul class="nav nav-second-level">
-            <li>
-              <a href="{{URL::route('users')}}"><i class="fa fa-bar-chart-o fa-fw"></i> List</a>
-            </li>
-            <li>
-              <a href="{{URL::route('create-user')}}"><i class="fa fa-edit fa-fw"></i> Create</a>
-            </li>
-          </ul>
-        </li>
-        <li>
           <a href="#"><i class="fa fa-table fa-fw"></i> Tables</a>
         </li>
         <li>
@@ -282,36 +271,6 @@
           <!-- /.nav-second-level -->
         </li>
         <li>
-          <a href="#"><i class="fa fa-sitemap fa-fw"></i> Groups<span class="fa arrow"></span></a>
-          <ul class="nav nav-second-level">
-            <li>
-              <a href="{{URL::route('group-list')}}"><i class="fa fa-bar-chart-o fa-fw"></i> List</a>
-            </li>
-            <li>
-              <a href="{{URL::route('create-group')}}"><i class="fa fa-edit fa-fw"></i> Create</a>
-            </li>
-            <li>
-              <a href="#">Third Level <span class="fa arrow"></span></a>
-              <ul class="nav nav-third-level">
-                <li>
-                  <a href="#">Third Level Item</a>
-                </li>
-                <li>
-                  <a href="#">Third Level Item</a>
-                </li>
-                <li>
-                  <a href="#">Third Level Item</a>
-                </li>
-                <li>
-                  <a href="#">Third Level Item</a>
-                </li>
-              </ul>
-              <!-- /.nav-third-level -->
-            </li>
-          </ul>
-          <!-- /.nav-second-level -->
-        </li>
-        <li>
           <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
           <ul class="nav nav-second-level">
             <li>
@@ -320,8 +279,31 @@
             <li>
               <a href="#">Login Page</a>
             </li>
+
           </ul>
           <!-- /.nav-second-level -->
+        </li>
+        <li>
+          <a href="#"><i class="fa fa-user fa-fw"></i> Users<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="{{URL::route('users')}}"><i class="fa fa-bar-chart-o fa-fw"></i> List</a>
+            </li>
+            <li>
+              <a href="{{URL::route('create-user')}}"><i class="fa fa-edit fa-fw"></i> Create</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#"><i class="fa fa-sitemap fa-fw"></i> Groups<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="{{URL::route('group-list')}}"><i class="fa fa-bar-chart-o fa-fw"></i> List</a>
+            </li>
+            <li>
+              <a href="{{URL::route('create-group')}}"><i class="fa fa-edit fa-fw"></i> Create</a>
+            </li>
+          </ul>
         </li>
       </ul>
     </div>
