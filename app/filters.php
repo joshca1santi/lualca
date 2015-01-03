@@ -46,7 +46,7 @@ Route::filter('notAuth', function () {
 Route::filter('hasPermissions', function ($route, $request, $userPermission = null) {
 
 		if(!Sentry::getUser()->hasAccess('admin')) {
-			return App::abort(403, 'Unauthorized action.');
+			return Redirect::to('403');
 		}
 
 });

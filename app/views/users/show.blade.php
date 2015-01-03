@@ -10,7 +10,7 @@
     <div class="col-md-6">
       <div class="panel panel-info">
         <div class="panel-heading">
-          <h3 class="panel-title">{{{$user->first_name or 'Sheena Kristin A.Eschor'}}}</h3>
+          <h1 class="panel-title text-capitalize">{{$user->first_name.' '.$user->last_name }}</h1>
         </div>
         <div class="panel-body">
           <div class="row">

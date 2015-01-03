@@ -8,32 +8,80 @@
     </ol>
   </div>
 
-  <div class="col-lg-5 col-xs-8">
+  <div class="col-md-8 col-md-offset-2 col-sm-6">
     <div class="well well-sm">
       <!-- Form Name -->
       <legend class="text-info">Create a new user</legend>
       <?php echo Form::open(array('url' => 'users/create', 'id' => 'create-user')); ?>
 
-    <p>
-      <?php echo Form::label('email', 'Email Address'); ?>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <?php echo Form::label('first_name', 'First Name'); ?>
 
-      <?php echo Form::text('email', Input::old('emails'), array('placeholder' => 'awesome@awesome.com', 'class' => 'form-control')); ?>
+            <?php echo Form::text('first_name','', array('placeholder' => 'First Name', 'class' => 'input-lg form-control')); ?>
 
-    </p>
-    <p>
-      <?php echo Form::label('password', 'Password'); ?>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+          <?php echo Form::label('last_name', 'Last Name'); ?>
 
-      <?php echo Form::password('password', array('class' => 'form-control')); ?>
+          <?php echo Form::text('last_name','', array('placeholder' => 'Last Name', 'class' => 'input-lg form-control')); ?>
 
-    </p>
-<!--    <p>
-      <?php echo Form::label('rpassword', 'Repeat-password'); ?>
+        </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <?php echo Form::label('email', 'Email Address'); ?>
 
-      <?php echo Form::password('password', array('class' => 'form-control')); ?>
+            <?php echo Form::text('email', Input::old('emails'), array('placeholder' => 'awesome@awesome.com', 'class' => 'form-control')); ?>
 
-    </p>
--->
-    <p><?php echo Form::submit('Create', array('class' => 'btn btn-success')); ?></p>
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <?php echo Form::label('password', 'Password'); ?>
+
+            <?php echo Form::password('password', array('class' => 'form-control')); ?>
+
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <?php echo Form::label('password_confirmation', 'Repeat Password'); ?>
+
+            <?php echo Form::password('password_confirmation', array('class' => 'form-control')); ?>
+
+          </div>
+        </div>
+      </div>
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+
+        <div class="form-group text-capitalize">
+          <legend class="text-info">Select Groups</legend>
+          <span id="helpBlock" class="help-block">You should choose at least one group to create a new user.</span>
+          <div style="max-height: 160px;overflow: auto;">
+            <ul id="check-list-box-user" class="list-group checked-list-box">
+              <?php foreach($groups as $group): ?>
+              <li class="list-group-item" id="<?php echo $group->getId(); ?>" name="<?php echo $group->getId(); ?>" value="<?php echo $group->getId(); ?>" data-color="success"><?php echo $group->getName(); ?></li>
+              <?php endforeach; ?>
+            </ul>
+          </div>
+        </div>
+        <?php echo Form::text('var', Input::old('var'), array('placeholder' => '', 'id' => 'var', 'class' => 'form-control hidden')); ?>
+
+
+      <!--  <pre id="display-json"></pre> -->
+      </div>
+    </div>
+    <p><?php echo Form::submit('Create', array('class' => 'btn btn-lg btn-success')); ?></p>
     <?php echo Form::close(); ?>
 
     </div>
@@ -45,6 +93,8 @@
 
   <?php $__env->startSection('custom-js'); ?>
     <?php echo HTML::script('js/user.js'); ?>
+
+    <?php echo HTML::script('js/checkbox.js'); ?>
 
   <?php $__env->stopSection(); ?>
 

@@ -22,7 +22,7 @@
       <legend class="text-info">Select Permissions</legend>
       <span id="helpBlock" class="help-block">You should choose at least one permission to create a new group.</span>
       <div style="max-height: 300px;overflow: auto;">
-        <ul id="check-list-box" class="list-group checked-list-box">
+        <ul id="check-list-box-group" class="list-group checked-list-box">
           <li class="list-group-item" name='admin' id='Administrator' data-color="">Administrator</li>
           <li class="list-group-item" name='security' data-color="success">Security</li>
           <li class="list-group-item" name='manager' data-color="success">Manager</li>

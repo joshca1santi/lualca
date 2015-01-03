@@ -10,7 +10,7 @@
       Lualca - <?php echo e(isset($title) ? $title : 'Default'); ?>
 
     </title>
-  <?php echo HTML::style('css/slate-bootstrap.min.css'); ?>
+  <?php echo HTML::style('css/bootstrap.min.css'); ?>
 
   <!-- MetisMenu CSS -->
   <?php echo HTML::style('css/plugins/metisMenu/metisMenu.min.css'); ?>

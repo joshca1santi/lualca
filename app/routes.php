@@ -10,6 +10,11 @@ Route::get('/blank', function()
 	return View::make('blank')->with('title',$title);
 });
 
+Route::get('/403', function()
+{
+  $title = '403';
+  return View::make('403')->with('title',$title);
+});
 
 Route::group(array('before' => 'basicAuth||hasPermissions'), function()
 {

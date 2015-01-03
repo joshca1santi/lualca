@@ -12,7 +12,7 @@ $(function()
   }).done(function(result)
 {
 
-  if(result.doLogin === false)
+  if(result.bool === false)
   {
     if(typeof result.message !== 'undefined')
     {
@@ -26,8 +26,33 @@ $(function()
           nonblock_opacity: .2
         }
       });
+    }
+    else if(typeof result.errorMessages !== 'undefined')
+    {
+    //  console.log(result.errorMessages['first_name'][0]);
+
+
+      for(var errorType in result.errorMessages)
+      {
+        for(var i in result.errorMessages[errorType])
+        {
+
+          new PNotify({
+            title: 'Error',
+            text: result.errorMessages[errorType][i],
+            type: 'error',
+            nonblock: {
+              nonblock: true,
+              nonblock_opacity: .2
+            }
+          });
+        }
+      }
+
+
 
     }
+
   }
   else
   {

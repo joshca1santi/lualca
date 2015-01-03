@@ -68,35 +68,48 @@ $(function () {
 
 
 
-  $("#check-list-box li").on('click', function(event) {
+  $("#check-list-box-user li").on('click', function(event) {
     event.preventDefault();
     var checkedItems = {}, counter = 0;
     var string;
-    $checkbox = $('#check-list-box');
+    $checkbox = $('#check-list-box-user');
 
-    $("#check-list-box li.act").each(function(idx, li) {
+    $("#check-list-box-user li.act").each(function(idx, li) {
       checkedItems[counter] = $(li).attr('name');
       counter++
     });
+      $('#var').val(JSON.stringify(checkedItems));
+    });
 
-    if (checkedItems[0] != null)
-      var string = '"'+checkedItems[0]+'":1';
+
+    $("#check-list-box-group li").on('click', function(event) {
+      event.preventDefault();
+      var checkedItems = {}, counter = 0;
+      var string;
+      $checkbox = $('#check-list-box-group');
+
+      $("#check-list-box-group li.act").each(function(idx, li) {
+        checkedItems[counter] = $(li).attr('name');
+        counter++
+      });
+
+      if (checkedItems[0] != null)
+        var string = '"'+checkedItems[0]+'":1';
       if (checkedItems[1] != null)
         var string = string+',"'+checkedItems[1]+'":1';
-        if (checkedItems[2] != null)
-          var string = string+',"'+checkedItems[2]+'":1';
-          if (checkedItems[3] != null)
-            var string = string+',"'+checkedItems[3]+'":1';
-            if (checkedItems[4] != null)
-              var string = string+',"'+checkedItems[4]+'":1';
+      if (checkedItems[2] != null)
+        var string = string+',"'+checkedItems[2]+'":1';
+      if (checkedItems[3] != null)
+        var string = string+',"'+checkedItems[3]+'":1';
+      if (checkedItems[4] != null)
+        var string = string+',"'+checkedItems[4]+'":1';
 
-                string = '{'+string+'}';
-                $('#var').val(string);
+      string = '{'+string+'}';
+      $('#var').val(string);
 
-                if (string === '{undefined}')
-                  $('#var').val('');
-
-            });
-
+      if (string === '{undefined}')
+        $('#var').val('');
+        
+    });
 
 });

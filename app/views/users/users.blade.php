@@ -29,6 +29,7 @@
           <th class="col-lg-1" style="text-align: center;"><input type="checkbox" class="check-all"></th>
           <th class="col-lg-1 hidden-xs" style="text-align: center;">Id</th>
           <th style="text-align: center;">Email</th>
+          <th style="text-align: center;">Name</th>
           <th style="text-align: center;">Activated</th>
           <th style="text-align: center;" class="hidden-xs">Last Login</th>
         </tr>
@@ -42,6 +43,7 @@
           </td>
           <td class="hidden-xs" style="text-align: center;">{{ $user->getId() }}</td>
           <td style="text-align: center;"><a href="users/{{ $user->id }}">{{ $user->email }}<a/></td>
+            <td style="text-align: center;" class="text-capitalize">{{ $user->first_name.' '.$user->last_name  }}</td>
             <td style="text-align: center;">{{ boolval($user->activated) ? 'True' : 'False' }}</td>
             <td style="text-align: center;" class="hidden-xs">{{{ $user->last_login or 'Never' }}}</td>
             @endif

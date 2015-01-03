@@ -1,5 +1,6 @@
 <?php
 
+
 class UserController extends \BaseController {
 
 	/**
@@ -26,7 +27,9 @@ class UserController extends \BaseController {
 	{
 		//
 		$title = 'Create';
-		return View::make('users.create')->with(array ('title' => $title));
+		$groups = Sentry::findAllGroups();
+
+		return View::make('users.create')->with(array ('title' => $title, 'groups' => $groups));
 	}
 
 
@@ -39,37 +42,59 @@ class UserController extends \BaseController {
 	{
 		try
 		{
-			// Create the user
+			//Validation rules array key user
+			$rules =  Config::get('validation.user');
+			//getting all inputs from the form
+			$validator = Validator::make(Input::all(), $rules);
+			//if there is some error then response false
+			if($validator->fails() ) {
+				return Response::json(array('bool' => false, 'errorMessages' => $validator->messages()));
+			}
+
+			$group_array = array();
+			$jsonText = Input::get('var');
+			$decodedText = html_entity_decode($jsonText);
+			$group_array = json_decode($decodedText, true);
+
+			if (empty($group_array))
+				return Response::json(array('bool' => false, 'message' => 'Error', 'messageType' => 'At least select one Group.'));
+
+			/** Creating the user ***************************************/
 			$user = Sentry::createUser(array(
 				'email'    => Input::get('email'),
 				'password' => Input::get('password'),
+				'first_name'    => Input::get('first_name'),
+				'last_name'    => Input::get('last_name'),
 				'activated' => true,
 			));
 
-			// Find the group using the group id
-			//$adminGroup = Sentry::findGroupById(1);
-
-			// Assign the group to the user
-			//$user->addGroup($adminGroup);
+			if(isset($group_array) && is_array($group_array) && !empty($group_array)) {
+				foreach($group_array as $groupId) {
+					$group = Sentry::findGroupById(intval($groupId));
+					$user->addGroup($group);
+				}
+			}
+			/**********************************************************/
 		}
 		catch (Cartalyst\Sentry\Users\LoginRequiredException $e)
 		{
-			return Response::json(array('doLogin' => false, 'message' => 'Error', 'messageType' => 'Login field is required.'));
+			return Response::json(array('bool' => false, 'message' => 'Error', 'messageType' => 'Login field is required.'));
 		}
 		catch (Cartalyst\Sentry\Users\PasswordRequiredException $e)
 		{
-			return Response::json(array('doLogin' => false, 'message' => 'Error', 'messageType' => 'Password field is required.'));
+			return Response::json(array('bool' => false, 'message' => 'Error', 'messageType' => 'Password field is required.'));
 		}
 		catch (Cartalyst\Sentry\Users\UserExistsException $e)
 		{
-			return Response::json(array('doLogin' => false, 'message' => 'Error', 'messageType' => 'User with this login already exists.'));
+			return Response::json(array('bool' => false, 'message' => 'Error', 'messageType' => 'User with this login already exists.'));
 		}
 		catch (Cartalyst\Sentry\Groups\GroupNotFoundException $e)
 		{
-			return Response::json(array('doLogin' => false, 'message' => 'Error', 'messageType' => 'Group was not found.'));
+			return Response::json(array('bool' => false, 'message' => 'Error', 'messageType' => 'Group was not found.'));
 		}
 
-		return Response::json(array('doLogin' => true, 'message' => 'Success', 'messageType' => 'User Created'));
+
+		return Response::json(array('bool' => true, 'message' => 'Success', 'messageType' => 'User Created'));
 
 	}
 
@@ -96,7 +121,7 @@ class UserController extends \BaseController {
 	}
 		catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
 		{
-			return Response::json(array('deletedUser' => false, 'message' => 'User Not Found', 'messageType' => 'danger'));
+			return Response::json(array('bool' => false, 'message' => 'User Not Found', 'messageType' => 'danger'));
 		}
 
 		return View::make('users.show')->with(array ('user' => $user));
@@ -146,9 +171,9 @@ class UserController extends \BaseController {
 		}
 		catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
 		{
-			return Response::json(array('deletedUser' => false, 'message' => 'User Not Found', 'messageType' => 'danger'));
+			return Response::json(array('bool' => false, 'message' => 'User Not Found', 'messageType' => 'danger'));
 		}
-		return Response::json(array('deletedUser' => true, 'message' => 'Deleted', 'messageType' => 'success'));
+		return Response::json(array('bool' => true, 'message' => 'Deleted', 'messageType' => 'success'));
 	}
 
 
