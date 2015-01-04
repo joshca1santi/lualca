@@ -62,6 +62,9 @@ class LoginController extends \BaseController {
 
 			// Authenticate the user
 			$user = Sentry::authenticate($credentials, false);
+      
+      Sentry::authenticateAndRemember($credentials);
+
 		}
 
 		catch (Cartalyst\Sentry\Users\LoginRequiredException $e)
