@@ -36,6 +36,12 @@ Route::group(array('before' => 'notAuth'), function () {
 		'as' => 'login',
 		'uses' => 'LoginController@index')
 	);
+  Route::get('/config', function()
+  {
+    $title = 'config';
+    return View::make('config')->with('title',$title);
+  });
+
 	Route::post('login', array(
 		'as' => 'login',
 		'uses' => 'LoginController@store')

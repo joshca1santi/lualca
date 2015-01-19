@@ -11,13 +11,13 @@
             <p>
               <?php echo Form::label('email', 'Email Address'); ?>
 
-              <?php echo Form::text('email', Input::old('email'), array('placeholder' => 'awesome@awesome.com', 'class' => 'form-control')); ?>
+              <?php echo Form::text('email', Input::old('email'), array('placeholder' => 'awesome@awesome.com', 'class' => 'form-control input-lg')); ?>
 
             </p>
             <p>
               <?php echo Form::label('password', 'Password'); ?>
 
-              <?php echo Form::password('password', array('class' => 'form-control')); ?>
+              <?php echo Form::password('password', array('class' => 'form-control input-lg')); ?>
 
             </p>
             <p><?php echo Form::submit('Submit!', array('class' => 'btn btn-success')); ?>
