@@ -240,49 +240,8 @@
         <li>
           <a href="{{URL::route('dashboard')}}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
         </li>
-        <li>
-          <a href="#"><i class="fa fa-table fa-fw"></i> Tables</a>
-        </li>
-        <li>
-          <a href="#"><i class="fa fa-edit fa-fw"></i> Forms</a>
-        </li>
-        <li>
-          <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
-          <ul class="nav nav-second-level">
-            <li>
-              <a href="#">Panels and Wells</a>
-            </li>
-            <li>
-              <a href="#">Buttons</a>
-            </li>
-            <li>
-              <a href="#">Notifications</a>
-            </li>
-            <li>
-              <a href="#">Typography</a>
-            </li>
-            <li>
-              <a href="#"> Icons</a>
-            </li>
-            <li>
-              <a href="#">Grid</a>
-            </li>
-          </ul>
-          <!-- /.nav-second-level -->
-        </li>
-        <li>
-          <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
-          <ul class="nav nav-second-level">
-            <li>
-              <a href="#">Blank Page</a>
-            </li>
-            <li>
-              <a href="#">Login Page</a>
-            </li>
+        @if(Sentry::getUser()->hasAccess('admin'))
 
-          </ul>
-          <!-- /.nav-second-level -->
-        </li>
         <li>
           <a href="#"><i class="fa fa-user fa-fw"></i> Users<span class="fa arrow"></span></a>
           <ul class="nav nav-second-level">
@@ -305,6 +264,9 @@
             </li>
           </ul>
         </li>
+
+        @endif
+
       </ul>
     </div>
     <!-- /.sidebar-collapse -->

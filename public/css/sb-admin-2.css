@@ -436,3 +436,10 @@ button {
 .success strong {
   color: #2b542c;
 }
+
+#loading div.center {
+  margin-top: 10px;
+  height: 15px;
+  width: 128px;
+  background: url(../js/ajax-loader-5.gif);
+}

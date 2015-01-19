@@ -2,7 +2,7 @@
 @section('section')
 <div class="row">
   <div class="col-lg-12">
-    @if($currentUser->hasAccess('admin'))
+
 
     <div class="page-header">
       <ol class="breadcrumb">
@@ -18,7 +18,7 @@
           {{ Sentry::getUser()->email }}
         @endif
 
-     @endif
+
 
 
   </div>

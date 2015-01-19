@@ -44,11 +44,19 @@ Route::filter('notAuth', function () {
 });
 
 
-Route::filter('hasPermissions', function ($route, $request, $userPermission = null) {
+Route::filter('isAdmin', function ($route, $request, $userPermission = null) {
 
 		if(!Sentry::getUser()->hasAccess('admin')) {
 			return Redirect::to('403');
 		}
+
+});
+
+Route::filter('isManager', function ($route, $request, $userPermission = null) {
+
+	if(!Sentry::getUser()->hasAccess('manager')) {
+		return Redirect::to('403');
+	}
 
 });
 

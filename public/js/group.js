@@ -66,6 +66,8 @@ return false;
     icon: result.icon
   });
 
+  window.location =  location.href;
+
 });
 });
 $('#confirm-modal').modal('hide');
@@ -81,6 +83,13 @@ $('#confirm-modal').modal('hide');
   {
     parent.find("tbody input:checkbox").prop("checked", false);
   }
+}).on('click', '#refresh', function(){
+  $.ajax({
+    url: ""
+  }).done(function(){
+    window.location =  location.href;
+  });
+
 });
 
 });

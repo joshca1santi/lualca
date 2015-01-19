@@ -44,6 +44,8 @@ Route::group(array('before' => 'notAuth'), function () {
 ////////////////////////////////////////
 
 /////////////////// USER
+Route::group(array('before' => 'basicAuth||isAdmin'), function()
+{
 	Route::get('users', array(
 		'as' => 'users',
 		'uses' => 'UserController@index')
@@ -64,11 +66,21 @@ Route::group(array('before' => 'notAuth'), function () {
 		'as' => 'delete-user',
 		'uses' => 'UserController@destroy')
 	);
+  Route::put('users/{id}', array(
+    'as' => 'activate-user',
+    'uses' => 'UserController@update')
+  );
+
+
+});
 ////////////////////////////////////////
 
 
 
+
 /////////////////// GROUP
+Route::group(array('before' => 'basicAuth||isAdmin'), function()
+{
 Route::get('group', array(
 	'as' => 'group-list',
 	'uses' => 'GroupController@index')
@@ -89,4 +101,5 @@ Route::delete('group/{id}', array(
 	'as' => 'delete-group',
 	'uses' => 'GroupController@destroy')
 );
+});
 ////////////////////////////////////////

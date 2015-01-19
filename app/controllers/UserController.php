@@ -11,12 +11,14 @@ class UserController extends \BaseController {
 
 	public function index()
 	{
+
 		$title = 'List';
 		$users = Sentry::findAllUsers();
+		Log::info("Listing Users ".Sentry::getUser()->name."");
+
 		return View::make('users.users')->with(array ('title' => $title, 'users' => $users));
 
 	}
-
 
 	/**
 	 * Show the form for creating a new resource.
@@ -31,7 +33,6 @@ class UserController extends \BaseController {
 
 		return View::make('users.create')->with(array ('title' => $title, 'groups' => $groups));
 	}
-
 
 	/**
 	 * Store a newly created resource in storage.
@@ -149,7 +150,33 @@ class UserController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+
+
+		try
+		{
+			$throttle = Sentry::findThrottlerByUserId($id);
+
+			if($banned = $throttle->isBanned())
+			{
+				// User is Banned
+				$throttle->unBan();
+			}
+			else
+			{
+				// Ban the user
+				$throttle->ban();
+			}
+
+		}
+		catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
+		{
+			return Response::json(array('bool' => false, 'message' => 'Not Banned', 'messageType' => 'error'));
+
+		}
+
+		return Response::json(array('bool' => true, 'message' => 'Banned', 'messageType' => 'success'));
+
+
 	}
 
 
@@ -174,6 +201,11 @@ class UserController extends \BaseController {
 			return Response::json(array('bool' => false, 'message' => 'User Not Found', 'messageType' => 'danger'));
 		}
 		return Response::json(array('bool' => true, 'message' => 'Deleted', 'messageType' => 'success'));
+	}
+
+	public function banUser($id){
+
+
 	}
 
 

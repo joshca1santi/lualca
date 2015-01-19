@@ -142,9 +142,7 @@ class GroupController extends \BaseController {
 		{
 			return Response::json(array('deletedGroup' => false, 'message' => 'Group Not Found', 'messageType' => 'danger'));
 		}
-
-		return View::make('group.list');
-
+		return Response::json(array('bool' => true, 'message' => 'Deleted', 'messageType' => 'success'));
 
 	}
 

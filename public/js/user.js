@@ -29,9 +29,6 @@ $(function()
     }
     else if(typeof result.errorMessages !== 'undefined')
     {
-    //  console.log(result.errorMessages['first_name'][0]);
-
-
       for(var errorType in result.errorMessages)
       {
         for(var i in result.errorMessages[errorType])
@@ -48,11 +45,7 @@ $(function()
           });
         }
       }
-
-
-
     }
-
   }
   else
   {
@@ -79,11 +72,9 @@ if (!$('.table tbody tr td input:checkbox:checked').is(':checked')){
     type: 'warning',
   });
 }
-
 else{
   $('#confirm-modal').modal();
 }
-
 
 }).on('click', '.confirm-action', function()
 {
@@ -98,25 +89,76 @@ else{
 {
   new PNotify({
     title: result.message,
-    text: result.messageType,
+    type: result.messageType,
     icon: result.icon
   });
+  setTimeout(function() {
+    window.location =  location.href;
+  }, 2000);
 
 });
 });
 $('#confirm-modal').modal('hide');
+
 }).on('change', '.check-all', function()
 {
   var parent = $(this).parents('.table');
   if($(this).is(':checked'))
   {
     parent.find("tbody input:checkbox").prop('checked', true);
-    $('#delete-item').css('display', 'inline-block');
+    //$('#delete-item').css('display', 'inline-block');
   }
   else
   {
     parent.find("tbody input:checkbox").prop("checked", false);
   }
+}).on('click', '#refresh', function(){
+  $.ajax({
+    url: ""
+  }).done(function(){
+    window.location =  location.href;
+  });
+
+}).on('click', '#activate-item', function()
+{
+  if (!$('.table tbody tr td input:checkbox:checked').is(':checked')){
+
+    new PNotify({
+      title: 'Warning',
+      text: 'Please select at least one user.',
+      type: 'warning',
+    });
+  }
+  else{
+    $('#confirm-modal2').modal();
+  }
+
+}).on('click', '.confirm-action2', function()
+{
+  $.each($('.table tbody tr td input:checkbox:checked'), function( key, value )
+{
+
+  $.ajax(
+  {
+    "url": window.location.href.toString()+"/../users/"+$(this).data('user-id'),
+    "type": "PUT"
+  }).done(function(result)
+{
+  new PNotify({
+    title: result.message,
+    text: result.messageType,
+    icon: result.icon
+  });
+  $('#confirm-modal2').modal('hide');
+  setTimeout(function() {
+    window.location =  location.href;
+  }, 2000);
+
 });
+});
+
+
+});
+
 
 });

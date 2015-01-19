@@ -1,7 +1,7 @@
 <?php $__env->startSection('section'); ?>
 <div class="row">
   <div class="col-lg-12">
-    <?php if($currentUser->hasAccess('admin')): ?>
+
 
     <div class="page-header">
       <ol class="breadcrumb">
@@ -18,7 +18,7 @@
 
         <?php endif; ?>
 
-     <?php endif; ?>
+
 
 
   </div>
