@@ -16,6 +16,27 @@ Route::get('/403', function()
   return View::make('403')->with('title',$title);
 });
 
+
+Route::get('config', array(
+  'as' => 'config',
+  'uses' => 'ConfigController@Index')
+);
+
+Route::post('config', array(
+  'as' => 'config-seed',
+  'uses' => 'ConfigController@seedDatabase')
+);
+
+Route::put('config', array(
+  'as' => 'config-mig',
+  'uses' => 'ConfigController@sentryMigration')
+);
+
+Route::patch('config', array(
+  'as' => 'config-mig',
+  'uses' => 'ConfigController@reset')
+);
+
 Route::group(array('before' => 'basicAuth||hasPermissions'), function()
 {
 	Route::get('dashboard', array(
@@ -30,17 +51,15 @@ Route::group(array('before' => 'basicAuth||hasPermissions'), function()
 
 });
 
+
 /////////////////// LOGIN
 Route::group(array('before' => 'notAuth'), function () {
 	Route::get('login', array(
 		'as' => 'login',
 		'uses' => 'LoginController@index')
 	);
-  Route::get('/config', function()
-  {
-    $title = 'config';
-    return View::make('config')->with('title',$title);
-  });
+
+
 
 	Route::post('login', array(
 		'as' => 'login',
