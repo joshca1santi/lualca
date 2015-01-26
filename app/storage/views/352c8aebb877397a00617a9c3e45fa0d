@@ -10,23 +10,22 @@
       Lualca - <?php echo e(isset($title) ? $title : 'Default'); ?>
 
     </title>
-  <?php echo HTML::style('css/bootstrap.min.css'); ?>
+    <?php echo HTML::style('css/cerulean-bootstrap.min.css'); ?>
 
   <!-- MetisMenu CSS -->
-  <?php echo HTML::style('css/plugins/metisMenu/metisMenu.min.css'); ?>
+    <?php echo HTML::style('css/plugins/metisMenu/metisMenu.min.css'); ?>
 
   <!-- Custom CSS -->
-  <?php echo HTML::style('css/sb-admin-2.css'); ?>
+    <?php echo HTML::style('css/sb-admin-2.css'); ?>
 
   <!-- Custom Fonts -->
-  <?php echo HTML::style('font-awesome/css/font-awesome.min.css'); ?>
+    <?php echo HTML::style('font-awesome/css/font-awesome.min.css'); ?>
 
   <!-- Pnotify -->
-  <?php echo HTML::style('css/pnotify.custom.min.css'); ?>
+    <?php echo HTML::style('css/pnotify.custom.min.css'); ?>
 
-  <?php echo HTML::style('css/plugins/social-buttons.css'); ?>
+    <?php echo HTML::style('css/plugins/social-buttons.css'); ?>
 
 <?php echo $__env->yieldContent('custom-css'); ?>
   </head>
-
-  <body>
+<body>

@@ -9,17 +9,16 @@
     <title>
       Lualca - {{{ $title or 'Default' }}}
     </title>
-  {{HTML::style('css/bootstrap.min.css')}}
+    {{HTML::style('css/cerulean-bootstrap.min.css')}}
   <!-- MetisMenu CSS -->
-  {{ HTML::style('css/plugins/metisMenu/metisMenu.min.css') }}
+    {{ HTML::style('css/plugins/metisMenu/metisMenu.min.css') }}
   <!-- Custom CSS -->
-  {{ HTML::style('css/sb-admin-2.css') }}
+    {{ HTML::style('css/sb-admin-2.css') }}
   <!-- Custom Fonts -->
-  {{ HTML::style('font-awesome/css/font-awesome.min.css') }}
+    {{ HTML::style('font-awesome/css/font-awesome.min.css') }}
   <!-- Pnotify -->
-  {{ HTML::style('css/pnotify.custom.min.css') }}
-  {{ HTML::style('css/plugins/social-buttons.css') }}
+    {{ HTML::style('css/pnotify.custom.min.css') }}
+    {{ HTML::style('css/plugins/social-buttons.css') }}
 @yield('custom-css')
   </head>
-
-  <body>
+<body>

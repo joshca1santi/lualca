@@ -9,7 +9,7 @@
   <title>
     Lualca - {{{ $title or 'Default' }}}
   </title>
-  {{HTML::style('css/cosmo-bootstrap.min.css')}}
+  {{HTML::style('css/cerulean-bootstrap.min.css')}}
   <!-- Custom Fonts -->
   {{ HTML::style('font-awesome/css/font-awesome.min.css') }}
   <!-- Pnotify -->
