@@ -10,7 +10,7 @@
       </ol>
     </div>
       <h4><strong>Welcome</strong> to the Lualca Admin panel.</h4>
-        <blockquote>This is a basic template to edit.</blockquote>
+        <blockquote>Thiss is a basic template to edit.</blockquote>
 
         @if(!Sentry::check())
           Not logged
