@@ -26,11 +26,11 @@ php artisan db:seed
 ```
 > This seed will create the first user
 
-User:
+User
 ```
 fural@admin.com
 ```
-Password:
+Password
 ```
 fural
 ```
