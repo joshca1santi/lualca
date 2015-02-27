@@ -203,13 +203,13 @@
     </li>
     <!-- /.dropdown -->
     <li class="dropdown">
-      <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="">
         <i class="fa fa-user fa-fw"></i>
-        @if(!Sentry::check())<span class='text-warning'>Not logged</span>@else<span class=''><strong>{{Sentry::getUser()->email}}</strong></span> @endif
+        @if(!Sentry::check())<span class='text-warning'>Not logged</span>@else<span class='text-green'>{{Sentry::getUser()->email}}</span> @endif
         <i class="fa fa-caret-down"></i>
       </a>
       <ul class="dropdown-menu dropdown-user">
-        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+        <li><a href="{{URL::route('users')}}/{{Sentry::getUser()->id}}"><i class="fa fa-user fa-fw"></i> User Profile</a>
         </li>
         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
         </li>

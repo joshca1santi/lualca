@@ -10,6 +10,9 @@ body {
 
 }
 
+.text-green{
+  color: #00FF6F;
+}
 #wrapper {
     width: 100%;
 }
@@ -104,15 +107,24 @@ body {
 }
 
 .sidebar ul li a.active {
- background-color: #007AF5;
+ background-color: #315876;
 }
 
 .sidebar ul li a {
   color: #fff;
 }
 
+.nav>li>a:hover, .nav>li>a:focus {
+text-decoration: none;
+background-color: transparent;
+}
+
+.nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
+background-color: #000;
+border-color: #337ab7;
+}
 .sidebar li a:hover{
-  background-color: #315876;
+  background-color: #000;
 }
 
 .sidebar .arrow {

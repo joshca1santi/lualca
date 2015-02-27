@@ -9,7 +9,7 @@
     <title>
       Lualca - {{{ $title or 'Default' }}}
     </title>
-    {{HTML::style('css/cerulean-bootstrap.min.css')}}
+    {{HTML::style('css/bootstrap.min.css')}}
   <!-- MetisMenu CSS -->
     {{ HTML::style('css/plugins/metisMenu/metisMenu.min.css') }}
   <!-- Custom CSS -->
