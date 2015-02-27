@@ -17,25 +17,7 @@ Route::get('/403', function()
 });
 
 
-Route::get('config', array(
-  'as' => 'config',
-  'uses' => 'ConfigController@Index')
-);
 
-Route::post('config', array(
-  'as' => 'config-seed',
-  'uses' => 'ConfigController@seedDatabase')
-);
-
-Route::put('config', array(
-  'as' => 'config-mig',
-  'uses' => 'ConfigController@sentryMigration')
-);
-
-Route::patch('config', array(
-  'as' => 'config-mig',
-  'uses' => 'ConfigController@reset')
-);
 
 Route::group(array('before' => 'basicAuth||hasPermissions'), function()
 {
@@ -54,17 +36,17 @@ Route::group(array('before' => 'basicAuth||hasPermissions'), function()
 
 /////////////////// LOGIN
 Route::group(array('before' => 'notAuth'), function () {
+
 	Route::get('login', array(
 		'as' => 'login',
 		'uses' => 'LoginController@index')
 	);
 
-
-
 	Route::post('login', array(
 		'as' => 'login',
 		'uses' => 'LoginController@store')
 	);
+
 });
 ////////////////////////////////////////
 
@@ -126,5 +108,42 @@ Route::delete('group/{id}', array(
 	'as' => 'delete-group',
 	'uses' => 'GroupController@destroy')
 );
+});
+////////////////////////////////////////
+
+/////////////////// CONFIG
+Route::group(array('before' => 'notAuth'), function () {
+Route::get('config', array(
+  'as' => 'config',
+  'uses' => 'ConfigController@Index')
+);
+
+Route::post('config', array(
+  'as' => 'config-seed',
+  'uses' => 'ConfigController@seedDatabase')
+);
+
+Route::put('config', array(
+  'as' => 'config-mig',
+  'uses' => 'ConfigController@sentryMigration')
+);
+
+Route::patch('config', array(
+  'as' => 'config-mig',
+  'uses' => 'ConfigController@reset')
+);
+
+});
+////////////////////////////////////////
+
+/////////////////// GROUP
+Route::group(array('before' => 'basicAuth||isAdmin'), function()
+{
+  
+Route::get('group', array(
+	'as' => 'parameters',
+	'uses' => 'ParametersController@index')
+);
+
 });
 ////////////////////////////////////////

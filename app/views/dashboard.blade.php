@@ -9,7 +9,7 @@
         <li>{{{ $title or 'Default' }}}</li>
       </ol>
     </div>
-      <h4><strong>Welcome</strong> to the Lualca Admin panel.</h4>
+      <h4><strong>Welcome</strong> to the  Admin panel.</h4>
         <blockquote>Thiss is a basic template to edit.</blockquote>
 
         @if(!Sentry::check())

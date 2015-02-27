@@ -10,4 +10,4 @@
     </div>
     <!-- /#page-wrapper -->
     </div>
-      @include('layouts.footer')
+@include('layouts.footer')

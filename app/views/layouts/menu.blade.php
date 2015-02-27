@@ -241,7 +241,9 @@
           <a href="{{URL::route('dashboard')}}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
         </li>
         @if(Sentry::getUser()->hasAccess('admin'))
-
+        <li>
+          <a href="{{URL::route('parameters')}}"><i class="fa fa-gears fa-fw"></i> Parameters</a>
+        </li>
         <li>
           <a href="#"><i class="fa fa-user fa-fw"></i> Users<span class="fa arrow"></span></a>
           <ul class="nav nav-second-level">
