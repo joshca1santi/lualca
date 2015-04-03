@@ -3,15 +3,27 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
-
+ @import url(http://fonts.googleapis.com/css?family=Orbitron);
 body {
 
   /*  background-color: #f8f8f8; */
 
 }
-
+.navbar-brand{
+  font-family: 'Orbitron', sans-serif;
+}
+.navbar-brand i{
+  font-size:12px;
+}
+.navbar-inverse .navbar-brand{
+  color: #9F5F9F;
+}
+.navbar-default .navbar-brand{
+  color: #FF7F00;
+}
 .text-green{
-  color: #00FF6F;
+  color: #00CD66;
+  font-size:11px;
 }
 #wrapper {
     width: 100%;

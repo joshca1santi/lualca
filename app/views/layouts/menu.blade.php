@@ -7,7 +7,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="#">Lualca Admin v1.0</a>
+    <a class="navbar-brand" href="#">FuralDev <i class="text-muted">v1.0</i></a>
   </div>
   <!-- /.navbar-header -->
 

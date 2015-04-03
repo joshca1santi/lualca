@@ -22,7 +22,7 @@
     </p>
     <p>
       {{ Form::label('adress', 'Address') }}
-      {{ Form::text('adress', Input::old('adress'), array('placeholder' => "Adress...", 'class' => 'form-control input-lg')) }}
+      {{ Form::text('adress', Input::old('adress'), array('placeholder' => "Address...", 'class' => 'form-control input-lg')) }}
     </p>
     <p>{{ Form::submit('Submit!', array('class' => 'btn btn-success')) }}
 
