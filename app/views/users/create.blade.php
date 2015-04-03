@@ -80,6 +80,6 @@
 @stop
 
   @section('custom-js')
-    {{HTML::script('js/user.js')}}
+    {{HTML::script('js/user/user.js')}}
     {{HTML::script('js/checkbox.js')}}
   @stop

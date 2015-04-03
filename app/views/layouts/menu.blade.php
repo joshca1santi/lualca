@@ -12,6 +12,11 @@
   <!-- /.navbar-header -->
 
   <ul class="nav navbar-top-links navbar-right">
+    <li>
+      <div id="loading">
+        <i class="text-green fa fa-spinner fa-spin fa-lg"></i> <b class='text-muted'>Loading</b>
+      </div>
+    </li>
     <li class="dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" href="#">
         <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>

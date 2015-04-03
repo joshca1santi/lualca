@@ -66,9 +66,9 @@ return array(
 		'pgsql' => array(
 			'driver'   => 'pgsql',
 			'host'     => 'localhost',
-			'database' => 'DB_Lualca',
-			'username' => 'lualca',
-			'password' => 'lualca',
+			'database' => 'db_fural',
+			'username' => 'postgres',
+			'password' => 'fala123',
 			'charset'  => 'utf8',
 			'prefix'   => '',
 			'schema'   => 'public',

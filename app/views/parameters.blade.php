@@ -21,7 +21,7 @@
       {{ Form::text('company', Input::old('company'), array('placeholder' => 'Type the company name...', 'class' => 'form-control input-lg')) }}
     </p>
     <p>
-      {{ Form::label('adress', 'Adress') }}
+      {{ Form::label('adress', 'Address') }}
       {{ Form::text('adress', Input::old('adress'), array('placeholder' => "Adress...", 'class' => 'form-control input-lg')) }}
     </p>
     <p>{{ Form::submit('Submit!', array('class' => 'btn btn-success')) }}

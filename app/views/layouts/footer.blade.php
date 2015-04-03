@@ -14,16 +14,17 @@
 $( document ).ready(function() {
 
   var url = window.location;
-
   $('ul.nav a[href="'+ url +'"]').addClass('active').parent().parent().addClass('in').parent().addClass('active');
-
   // Will also work for relative and absolute hrefs
-
   $('ul.nav a').filter(function() {
-
     return this.href == url;
-
   }).addClass('active').parent().parent().addClass('in').parent().addClass('active');
+  $("#loading").hide();
+  $(document).bind("ajaxSend", function(){
+    $("#loading").show();
+  }).bind("ajaxComplete", function(){
+    $("#loading").hide();
+  });
 
 });
 </script>

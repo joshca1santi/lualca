@@ -3,6 +3,8 @@ $(function()
 
   $(document).on('submit', '#create-user', function()
 {
+
+
   var sArray = $(this).serializeArray();
   $.ajax({
     "type": "POST",

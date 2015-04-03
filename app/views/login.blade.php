@@ -12,11 +12,11 @@
             {{ Form::open(array('url' => 'login', 'id' => 'login')) }}
             <p>
               {{ Form::label('email', 'Email Address') }}
-              {{ Form::text('email', Input::old('email'), array('placeholder' => 'awesome@awesome.com', 'class' => 'form-control input-lg')) }}
+              {{ Form::text('email', Input::old('email'), array('placeholder' => 'email@example.com', 'class' => 'form-control input-lg')) }}
             </p>
             <p>
               {{ Form::label('password', 'Password') }}
-              {{ Form::password('password', array('class' => 'form-control input-lg')) }}
+              {{ Form::password('password', array('placeholder' => '**********', 'class' => 'form-control input-lg')) }}
             </p>
             <p>{{ Form::submit('Submit!', array('class' => 'btn btn-success')) }}
                <a class="pull-right" href="#">Forgot your password?</a>

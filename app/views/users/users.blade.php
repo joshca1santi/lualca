@@ -10,11 +10,7 @@
       <li>{{{ $title or 'Default' }}}</li>
     </ol>
   </div>
-<div class="col-md-12">
 
-  <div id="loading" style='display: none;' class="center">Loading...<div class="center"></div></div>
-
-</div>
   <div class="col-md-12">
 <div class="panel panel-primary">
   <div class="panel-heading">

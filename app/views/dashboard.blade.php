@@ -15,9 +15,8 @@
         @if(!Sentry::check())
           Not logged
         @else
-          {{ Sentry::getUser()->email }}
+          {{ Sentry::getUser()->first_name }}
         @endif
-
 
 
 

@@ -109,7 +109,7 @@ $(function () {
 
       if (string === '{undefined}')
         $('#var').val('');
-        
+
     });
 
 });

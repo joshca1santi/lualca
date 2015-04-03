@@ -75,6 +75,7 @@ class UserController extends \BaseController {
 					$user->addGroup($group);
 				}
 			}
+
 			/**********************************************************/
 		}
 		catch (Cartalyst\Sentry\Users\LoginRequiredException $e)
@@ -94,8 +95,17 @@ class UserController extends \BaseController {
 			return Response::json(array('bool' => false, 'message' => 'Error', 'messageType' => 'Group was not found.'));
 		}
 
+		$data= array('name' 			=> Input::get('first_name'),
+								'extrainfo' 	=> '',
+								);
+
+		Mail::send('mail.welcome', $data, function($message) {
+			$message->to(Input::get('email'), 'Fural')
+							->subject('Welcome to the Fural Admin Panel');
+			});
 
 		return Response::json(array('bool' => true, 'message' => 'Success', 'messageType' => 'User Created'));
+
 
 	}
 

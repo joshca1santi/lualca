@@ -139,8 +139,8 @@ Route::patch('config', array(
 /////////////////// GROUP
 Route::group(array('before' => 'basicAuth||isAdmin'), function()
 {
-  
-Route::get('group', array(
+
+Route::get('parameters', array(
 	'as' => 'parameters',
 	'uses' => 'ParametersController@index')
 );

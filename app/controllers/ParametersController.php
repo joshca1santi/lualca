@@ -11,6 +11,7 @@ class ParametersController extends \BaseController {
 	{
 		//
 		$title= 'Parameters';
+
 		return View::make('parameters')->with(array ('title' => $title));
 	}
 

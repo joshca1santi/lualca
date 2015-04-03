@@ -1,4 +1,5 @@
 @include('layouts.header')
+
     <div id="wrapper">
       @include('layouts.menu')
     <!-- Page Content -->
