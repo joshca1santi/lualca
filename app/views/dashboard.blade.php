@@ -18,7 +18,9 @@
           {{ Sentry::getUser()->first_name }}
         @endif
 
+        {{  Config::get('global.company'); }}
 
+        
 
   </div>
   <!-- /.col-lg-12 -->

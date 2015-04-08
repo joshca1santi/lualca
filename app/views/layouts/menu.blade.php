@@ -7,7 +7,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="#">FuralDev <i class="text-muted">v1.0</i></a>
+    <a class="navbar-brand" href="#">{{  Config::get('global.company'); }} <i class="text-muted">v1.0</i></a>
   </div>
   <!-- /.navbar-header -->
 
@@ -250,7 +250,7 @@
           <a href="{{URL::route('parameters')}}"><i class="fa fa-gears fa-fw"></i> Parameters</a>
         </li>
         <li>
-          <a href="#"><i class="fa fa-user fa-fw"></i> Users<span class="fa arrow"></span></a>
+          <a href="#"><i class="fa fa-user fa-fw"></i> {{ Lang::get('menu.users'); }}<span class="fa arrow"></span></a>
           <ul class="nav nav-second-level">
             <li>
               <a href="{{URL::route('users')}}"><i class="fa fa-bar-chart-o fa-fw"></i> List</a>
@@ -261,7 +261,7 @@
           </ul>
         </li>
         <li>
-          <a href="#"><i class="fa fa-sitemap fa-fw"></i> Groups<span class="fa arrow"></span></a>
+          <a href="#"><i class="fa fa-sitemap fa-fw"></i> {{ Lang::get('menu.groups'); }}<span class="fa arrow"></span></a>
           <ul class="nav nav-second-level">
             <li>
               <a href="{{URL::route('group-list')}}"><i class="fa fa-bar-chart-o fa-fw"></i> List</a>
